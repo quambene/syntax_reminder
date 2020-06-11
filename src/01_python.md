@@ -105,3 +105,19 @@ my_class_instance = MyClass()
 my_class_instance.my_function()
 my_class_instance.my_class_var
 ```
+
+### Error handling
+
+```python
+try:
+    # statement
+except ZeroDivisionError: # if an exception was raised in the try clause
+    # statement
+else: # if no exceptions were raised in the try clause
+    # statement
+finally: # always executed
+    # statement
+
+# Raise error
+raise ValueError("error message")
+```
