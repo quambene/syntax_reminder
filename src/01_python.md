@@ -104,6 +104,12 @@ class MyClass:
 my_class_instance = MyClass()
 my_class_instance.my_function()
 my_class_instance.my_class_var
+
+# Data class
+@dataclass
+class User:
+    name: str
+    email: str
 ```
 
 ### Error handling
