@@ -119,6 +119,11 @@ match my_option {
     None => None,
 }
 
+match some_value {
+    4 => println!("four"),
+    _ => (),
+}
+
 // if let
 if let Some(i) = my_option {
     println!("Matched {}", i)
