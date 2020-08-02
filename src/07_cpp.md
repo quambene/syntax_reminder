@@ -40,7 +40,6 @@ void swap(int &x, int &y) {
 
 /* call by reference */
 swap(a, b)
-
 ```
 
 ### Classes
@@ -85,8 +84,6 @@ class MyClass {
             // ...
         }
 }
-
-// Operator overloading
 
 // Polymorphism
 class MyBaseClass {

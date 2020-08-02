@@ -1,9 +1,8 @@
 # Scheme
 
-
 ### Prefix notation
 
-```lisp
+```scheme
 ;;; Combination
 (+ 5 64)
 
@@ -15,13 +14,13 @@ set!
 
 ### Print
 
-```lisp
+```scheme
 (write-line "hello world")
 ```
 
 ### Variables
 
-```lisp
+```scheme
 (define pi 3.14159)
 
 (define string "my string")
@@ -32,14 +31,14 @@ set!
 
 ### Data types
 
-```lisp
+```scheme
 ;;; List
 (list 1 2 3 4)
 ```
 
 ### Procedure
 
-```lisp
+```scheme
 (define (square x) (* x x))
 
 ;;; Lambda

@@ -159,7 +159,7 @@ impl MyStruct {
     }
 }
 
-// Closure (lambda expression)
+// Closure
 let my_closure = |i| i + 1;
 let my_closure = |i: i32| -> i32 { i + 1 }; // typed
 ```
