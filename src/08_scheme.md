@@ -2,7 +2,7 @@
 
 ### Prefix notation
 
-```lisp
+```haskell
 ;;; Combination
 (+ 5 64)
 
@@ -14,13 +14,13 @@ set!
 
 ### Print
 
-```lisp
+```haskell
 (write-line "hello world")
 ```
 
 ### Variables
 
-```lisp
+```haskell
 (define pi 3.14159)
 
 (define string "my string")
@@ -31,14 +31,14 @@ set!
 
 ### Data types
 
-```lisp
+```haskell
 ;;; List
 (list 1 2 3 4)
 ```
 
 ### Procedure
 
-```lisp
+```haskell
 (define (square x) (* x x))
 
 ;;; Lambda
