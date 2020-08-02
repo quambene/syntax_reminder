@@ -83,7 +83,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><a href="01_python.html">Python</a></li><li class="chapter-item expanded affix "><a href="02_typescript.html">Typescript</a></li><li class="chapter-item expanded affix "><a href="03_rust.html">Rust</a></li><li class="chapter-item expanded affix "><a href="04_go.html">Go</a></li><li class="chapter-item expanded affix "><a href="05_java.html">Java</a></li><li class="chapter-item expanded affix "><a href="06_c.html">C</a></li><li class="chapter-item expanded affix "><a href="07_cpp.html">C++</a></li><li class="chapter-item expanded affix "><a href="08_scheme.html">Scheme</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="01_python.html">Python</a></li><li class="chapter-item expanded affix "><a href="02_typescript.html">Typescript</a></li><li class="chapter-item expanded affix "><a href="03_rust.html">Rust</a></li><li class="chapter-item expanded affix "><a href="04_go.html">Go</a></li><li class="chapter-item expanded affix "><a href="05_java.html">Java</a></li><li class="chapter-item expanded affix "><a href="06_c.html">C</a></li><li class="chapter-item expanded affix "><a href="07_cpp.html">C++</a></li><li class="chapter-item expanded affix "><a href="08_scheme.html">Scheme</a></li><li class="chapter-item expanded affix "><a href="09_dart.html">Dart</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -237,6 +237,25 @@ def my_function():
 my_class_instance = MyClass()
 my_class_instance.my_function()
 my_class_instance.my_class_var
+
+# Data class
+@dataclass
+class User:
+    name: str
+    email: str
+</code></pre>
+<h3><a class="header" href="#error-handling" id="error-handling">Error handling</a></h3>
+<pre><code class="language-python">try:
+    # statement
+except ZeroDivisionError: # if an exception was raised in the try clause
+    # statement
+else: # if no exceptions were raised in the try clause
+    # statement
+finally: # always executed
+    # statement
+
+# Raise error
+raise ValueError(&quot;error message&quot;)
 </code></pre>
 <h1><a class="header" href="#typescript" id="typescript">Typescript</a></h1>
 <h3><a class="header" href="#print-1" id="print-1">Print</a></h3>
@@ -330,6 +349,22 @@ let odds = evens.map(v =&gt; v + 1);
 
 // Instantiation
 let person = new Person();
+</code></pre>
+<h3><a class="header" href="#error-handling-1" id="error-handling-1">Error handling</a></h3>
+<pre><code class="language-javascript">try {
+    // code to try
+}
+catch (err) {
+    // code to handle errors
+    if (err instanceof Error) {
+
+    } else {
+        throw(err);
+    }
+}
+finally {
+   // code to be executed regardless of the try-catch result
+}
 </code></pre>
 <h1><a class="header" href="#rust" id="rust">Rust</a></h1>
 <h3><a class="header" href="#print-2" id="print-2">Print</a></h3>
@@ -455,6 +490,11 @@ match my_option {
     None =&gt; None,
 }
 
+match some_value {
+    4 =&gt; println!(&quot;four&quot;),
+    _ =&gt; (),
+}
+
 // if let
 if let Some(i) = my_option {
     println!(&quot;Matched {}&quot;, i)
@@ -491,7 +531,7 @@ impl MyStruct {
     }
 }
 
-// Closure (lambda expression)
+// Closure
 let my_closure = |i| i + 1;
 let my_closure = |i: i32| -&gt; i32 { i + 1 }; // typed
 <span class="boring">}
@@ -577,7 +617,7 @@ fn main() {
 // other macros
 unimplemented!() // satisfies the type checker without providing an implementation
 </code></pre></pre>
-<h3><a class="header" href="#error-handling" id="error-handling">Error handling</a></h3>
+<h3><a class="header" href="#error-handling-2" id="error-handling-2">Error handling</a></h3>
 <pre><pre class="playpen"><code class="language-rust">
 <span class="boring">#![allow(unused)]
 </span><span class="boring">fn main() {
@@ -765,7 +805,7 @@ func (s myStruct) myMethod2 int {
 }
 
 </code></pre>
-<h3><a class="header" href="#error-handling-1" id="error-handling-1">Error handling</a></h3>
+<h3><a class="header" href="#error-handling-3" id="error-handling-3">Error handling</a></h3>
 <pre><code class="language-go">func myFunction(arg int) (int, error) {
     if arg == 0 {
         return -1, errors.New(&quot;error message&quot;)
@@ -1087,7 +1127,7 @@ unsigned long long int factorial(unsigned int i) {
    return i * factorial(i - 1);
 }
 </code></pre>
-<h3><a class="header" href="#error-handling-2" id="error-handling-2">Error handling</a></h3>
+<h3><a class="header" href="#error-handling-4" id="error-handling-4">Error handling</a></h3>
 <pre><code class="language-c">/* Opening file */
 #include &lt;stdio.h&gt;
 #include &lt;errno.h&gt;
@@ -1172,7 +1212,6 @@ string x;
 
 /* call by reference */
 swap(a, b)
-
 </code></pre>
 <h3><a class="header" href="#classes-3" id="classes-3">Classes</a></h3>
 <pre><code class="language-cpp">class MyClass {
@@ -1215,8 +1254,6 @@ class MyClass {
         }
 }
 
-// Operator overloading
-
 // Polymorphism
 class MyBaseClass {
     public:
@@ -1248,7 +1285,7 @@ class MyDerivedClass2: public MyBaseClass {
 </code></pre>
 <h1><a class="header" href="#scheme" id="scheme">Scheme</a></h1>
 <h3><a class="header" href="#prefix-notation" id="prefix-notation">Prefix notation</a></h3>
-<pre><code class="language-lisp">;;; Combination
+<pre><code class="language-scheme">;;; Combination
 (+ 5 64)
 
 ;;; Fundamental forms
@@ -1257,10 +1294,10 @@ lambda
 set!
 </code></pre>
 <h3><a class="header" href="#print-7" id="print-7">Print</a></h3>
-<pre><code class="language-lisp">(write-line &quot;hello world&quot;)
+<pre><code class="language-scheme">(write-line &quot;hello world&quot;)
 </code></pre>
 <h3><a class="header" href="#variables-7" id="variables-7">Variables</a></h3>
-<pre><code class="language-lisp">(define pi 3.14159)
+<pre><code class="language-scheme">(define pi 3.14159)
 
 (define string &quot;my string&quot;)
 
@@ -1268,14 +1305,33 @@ set!
 (set! &lt;name&gt; &lt;new-value&gt;)
 </code></pre>
 <h3><a class="header" href="#data-types-7" id="data-types-7">Data types</a></h3>
-<pre><code class="language-lisp">;;; List
+<pre><code class="language-scheme">;;; List
 (list 1 2 3 4)
 </code></pre>
 <h3><a class="header" href="#procedure" id="procedure">Procedure</a></h3>
-<pre><code class="language-lisp">(define (square x) (* x x))
+<pre><code class="language-scheme">(define (square x) (* x x))
 
 ;;; Lambda
 (lambda (x) (+ x 4))
+</code></pre>
+<h1><a class="header" href="#dart" id="dart">Dart</a></h1>
+<h3><a class="header" href="#variables-8" id="variables-8">Variables</a></h3>
+<pre><code class="language-dart">
+</code></pre>
+<h3><a class="header" href="#data-types-8" id="data-types-8">Data types</a></h3>
+<pre><code class="language-dart">
+</code></pre>
+<h3><a class="header" href="#control-flow-6" id="control-flow-6">Control flow</a></h3>
+<pre><code class="language-dart">
+</code></pre>
+<h3><a class="header" href="#functions-7" id="functions-7">Functions</a></h3>
+<pre><code class="language-dart">
+</code></pre>
+<h3><a class="header" href="#classes-4" id="classes-4">Classes</a></h3>
+<pre><code class="language-dart">
+</code></pre>
+<h3><a class="header" href="#error-handling-5" id="error-handling-5">Error handling</a></h3>
+<pre><code class="language-dart">
 </code></pre>
 
                     </main>

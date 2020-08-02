@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>Python - Syntax reminder for polyglots</title>
+        <title>C - Syntax reminder for polyglots</title>
         
 
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
@@ -81,7 +81,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><a href="01_python.html" class="active">Python</a></li><li class="chapter-item expanded affix "><a href="02_typescript.html">Typescript</a></li><li class="chapter-item expanded affix "><a href="03_rust.html">Rust</a></li><li class="chapter-item expanded affix "><a href="04_go.html">Go</a></li><li class="chapter-item expanded affix "><a href="05_java.html">Java</a></li><li class="chapter-item expanded affix "><a href="06_c.html">C</a></li><li class="chapter-item expanded affix "><a href="07_cpp.html">C++</a></li><li class="chapter-item expanded affix "><a href="08_scheme.html">Scheme</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="01_python.html">Python</a></li><li class="chapter-item expanded affix "><a href="02_typescript.html">Typescript</a></li><li class="chapter-item expanded affix "><a href="03_rust.html">Rust</a></li><li class="chapter-item expanded affix "><a href="04_go.html">Go</a></li><li class="chapter-item expanded affix "><a href="05_java.html">Java</a></li><li class="chapter-item expanded affix "><a href="06_c.html" class="active">C</a></li><li class="chapter-item expanded affix "><a href="07_cpp.html">C++</a></li><li class="chapter-item expanded affix "><a href="08_scheme.html">Scheme</a></li><li class="chapter-item expanded affix "><a href="09_dart.html">Dart</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -147,94 +147,191 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1><a class="header" href="#python" id="python">Python</a></h1>
+                        <h1><a class="header" href="#c" id="c">C</a></h1>
 <h3><a class="header" href="#print" id="print">Print</a></h3>
-<pre><code class="language-python">name = &quot;world&quot;
-print(&quot;Hello&quot;, name)
-print(f&quot;Hello, {name}!&quot;)
-print(&quot;This %(verb)s a %(noun)s.&quot; % {&quot;noun&quot;: &quot;test&quot;, &quot;verb&quot;: &quot;is&quot;})
-print(&quot;integer: %d float: %f&quot; % (my_int, my_float))
+<pre><code class="language-c">printf(&quot;Hello World! \n&quot;);
 </code></pre>
 <h3><a class="header" href="#variables" id="variables">Variables</a></h3>
-<pre><code class="language-python">x: int # Declare type
-x = 4 # Assign value
-x: int = 4 # Assign value (typed)
-x = y = z = 0 # Multiple assignment
-x += 1 # Increment
-x -= 1 # Decrement
+<pre><code class="language-c">int x; /* declare */
+x = 4; /* initialize */
+int x = 4; /* declare and initialize */
+const x = 4;
+int *x; /* declare pointer variable */
+auto int x; /* Default storage class for local variables */
+register int x; /* Store variable in register instead of RAM */
+static int x; /* Keep variable during lifetime of the program */
+extern int x; /* Reference of a global variable visible to all program files */
 </code></pre>
 <h3><a class="header" href="#data-types" id="data-types">Data types</a></h3>
-<pre><code class="language-python"># Basic types
-x: int
-x: float
-x: complex
-x: str
-x: bool
+<pre><code class="language-c">/* Basic types */
+int x;
+float x;
+double x;
+char x;
+char my_string[]; /* String as array of chars */
 
-# List
-x = [&quot;item1&quot;, &quot;item2&quot;, &quot;item3&quot;]
-x: List[str] = [&quot;item1&quot;, &quot;item2&quot;, &quot;item3&quot;] # typed
-x[0:3] # Indexing is inclusive-exclusive
-x[-3:-1] # Negative indexes count from the last item backwards
+/* Boolean */
+#include &lt;stdbool.h&gt;
+bool x;
 
-# Tuple
-x = (1, 2, 3)
-x: Tuple[int, int, int] = (1, 2, 3) # typed
+/* Array */
+int arr[5] = {1, 2, 3, 4, 5};
+int first_arr = arr[0];
 
-# Dictionary
-x = {&quot;key1&quot;: 1, &quot;key2&quot;: 2}
-x: Dict[int, int] = {&quot;key1&quot;: 1, &quot;key2&quot;: 2} # typed
+/* Enum */
+enum Color {Red, Green, Blue};
 
-# Option
-x: Optional[str] = some_function()
+/* Struct */
+struct User {
+    char username[50];
+    char email[50];
+};
+
+/* Declare and intialize struct */
+struct User user;
+strcpy(user.username, &quot;someusername&quot;);
+strcpy(user.email, &quot;someone@example.com&quot;);
+
+/* Union: store different data types in the same memory location */
+union Data {
+    int i;
+    float f;
+    char str[10];
+}
+
+/* Typedef: alias for a type */
+typedef unsigned char BYTE;
+
+/* Define: alias for values */
+#define ONE 1
+
+/* Type casting */
+double x = 4.
+x_converted = (int) x
 </code></pre>
 <h3><a class="header" href="#control-flow" id="control-flow">Control flow</a></h3>
-<pre><code class="language-python"># for loop
-for i in range(10):
-    print(i)
+<pre><code class="language-c">/* for loop */
+for (a = 10; a &lt; 20; a++) {
+    /* statement */
+}
 
-# while loop
-while i &lt; 3:
-    print(i)
+/* while loop */
+while(i &lt; 3) {
+    /* statement */
+}
 
-# if-else
-if a &lt; b:
-    # statement
-elif a == b:
-    # statement
-else:
-    # statement
+/* if-else */
+if (a &lt; b) {
+    /* statement */
+} else if (a == b) {
+    /* statement */
+} else {
+    /* statement */
+}
+
+/* ? operator */
+exp1 ? exp2 : exp3;
+
+/* switch */
+switch(x) {
+    case 'A':
+        /* statement */
+        break;
+    case 'B':
+        /* statement */
+        break;
+    default:
+        /* statement */
+        break;
+}
 </code></pre>
 <h3><a class="header" href="#functions" id="functions">Functions</a></h3>
-<pre><code class="language-python">def my_function(arg, optional_arg = 'default value'):
-    return arg, optional_arg
+<pre><code class="language-c">int my_function(int x) {
+    int y = 3;
+    return x + y;
+}
 
-# Typed function
-def my_function(arg1: int, arg2: int) -&gt; Tuple[int, int]:
-    return arg1, arg2
+void swap(int *x, int *y) {
+    int temp;
+    temp = *x;
+    *x = *y;
+    *y = temp;
+    return;
+}
 
-# Lambda function
-add_one = lambda x: x + 1
+/* call by value */
+my_function(a)
 
-# Decorator
-@my_decorator
-def my_function():
-    return
+/* call by pointer */
+swap(&amp;a, &amp;b)
+
+/* Variable number of parameters */
+int my_function(int num, ... ) {
+    /* statement */
+}
+
+/* Recursive function */
+unsigned long long int factorial(unsigned int i) {
+   if (i &lt;= 1) {
+      return 1;
+   }
+   return i * factorial(i - 1);
+}
 </code></pre>
-<h3><a class="header" href="#classes" id="classes">Classes</a></h3>
-<pre><code class="language-python">class MyClass:
-    my_class_var = 100
+<h3><a class="header" href="#error-handling" id="error-handling">Error handling</a></h3>
+<pre><code class="language-c">/* Opening file */
+#include &lt;stdio.h&gt;
+#include &lt;errno.h&gt;
+#include &lt;string.h&gt;
 
-    def __init__(self):
-        self.my_instance_var = 3
+extern int errno;
+FILE * pf;
+pf = fopen (&quot;unexist.txt&quot;, &quot;rb&quot;);
 
-    def my_function(self):
-        return self.my_instance_var
+if (pf == NULL) {
+    fprintf(stderr, &quot;Value of errno: %d\n&quot;, errno);
+    perror(&quot;Error opening file&quot;);
+}
 
-# Instantiation
-my_class_instance = MyClass()
-my_class_instance.my_function()
-my_class_instance.my_class_var
+
+/* Division by zero */
+#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+
+if (divisor == 0) {
+   fprintf(stderr, &quot;Division by zero! Exiting...\n&quot;);
+   exit(-1);
+}
+</code></pre>
+<h3><a class="header" href="#dynamic-memory-allocation" id="dynamic-memory-allocation">Dynamic memory allocation</a></h3>
+<pre><code class="language-c">char *ptr
+ptr = malloc(100 * sizeof(char)); /* Allocate memory */
+ptr = realloc(ptr, 500 * sizeof(char)); /* Resize allocated memory */
+free(ptr); /* Release allocated memory */
+</code></pre>
+<h3><a class="header" href="#preprocessors" id="preprocessors">Preprocessors</a></h3>
+<pre><code class="language-c">#define /* Substitutes a preprocessor macro */
+#include /* Inserts a particular header from another file */
+#undef /* Undefines a preprocessor macro */
+#error
+#pragma
+</code></pre>
+<h3><a class="header" href="#macros" id="macros">Macros</a></h3>
+<pre><code class="language-c">/* Parameterized macro */
+#define square(x) ((x) * (x))
+
+/* Predefined macros */
+__DATE__
+__TIME__
+__FILE__
+__LINE__
+</code></pre>
+<h3><a class="header" href="#header-files" id="header-files">Header files</a></h3>
+<pre><code class="language-c">/* System header files */
+#include &lt;header.h&gt;
+
+/* Program header files */
+#include &quot;my_header.h&quot;
 </code></pre>
 
                     </main>
@@ -242,9 +339,13 @@ my_class_instance.my_class_var
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
                         
+                            <a rel="prev" href="05_java.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
 
                         
-                            <a rel="next" href="02_typescript.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <a rel="next" href="07_cpp.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
                         
@@ -256,9 +357,13 @@ my_class_instance.my_class_var
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
                 
+                    <a rel="prev" href="05_java.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
 
                 
-                    <a rel="next" href="02_typescript.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <a rel="next" href="07_cpp.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
                 

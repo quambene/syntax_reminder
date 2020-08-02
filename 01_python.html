@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>Scheme - Syntax reminder for polyglots</title>
+        <title>Python - Syntax reminder for polyglots</title>
         
 
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
@@ -81,7 +81,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><a href="01_python.html">Python</a></li><li class="chapter-item expanded affix "><a href="02_typescript.html">Typescript</a></li><li class="chapter-item expanded affix "><a href="03_rust.html">Rust</a></li><li class="chapter-item expanded affix "><a href="04_go.html">Go</a></li><li class="chapter-item expanded affix "><a href="05_java.html">Java</a></li><li class="chapter-item expanded affix "><a href="06_c.html">C</a></li><li class="chapter-item expanded affix "><a href="07_cpp.html">C++</a></li><li class="chapter-item expanded affix "><a href="08_scheme.html" class="active">Scheme</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="01_python.html" class="active">Python</a></li><li class="chapter-item expanded affix "><a href="02_typescript.html">Typescript</a></li><li class="chapter-item expanded affix "><a href="03_rust.html">Rust</a></li><li class="chapter-item expanded affix "><a href="04_go.html">Go</a></li><li class="chapter-item expanded affix "><a href="05_java.html">Java</a></li><li class="chapter-item expanded affix "><a href="06_c.html">C</a></li><li class="chapter-item expanded affix "><a href="07_cpp.html">C++</a></li><li class="chapter-item expanded affix "><a href="08_scheme.html">Scheme</a></li><li class="chapter-item expanded affix "><a href="09_dart.html">Dart</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -147,36 +147,113 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1><a class="header" href="#scheme" id="scheme">Scheme</a></h1>
-<h3><a class="header" href="#prefix-notation" id="prefix-notation">Prefix notation</a></h3>
-<pre><code class="language-lisp">;;; Combination
-(+ 5 64)
-
-;;; Fundamental forms
-define
-lambda
-set!
-</code></pre>
+                        <h1><a class="header" href="#python" id="python">Python</a></h1>
 <h3><a class="header" href="#print" id="print">Print</a></h3>
-<pre><code class="language-lisp">(write-line &quot;hello world&quot;)
+<pre><code class="language-python">name = &quot;world&quot;
+print(&quot;Hello&quot;, name)
+print(f&quot;Hello, {name}!&quot;)
+print(&quot;This %(verb)s a %(noun)s.&quot; % {&quot;noun&quot;: &quot;test&quot;, &quot;verb&quot;: &quot;is&quot;})
+print(&quot;integer: %d float: %f&quot; % (my_int, my_float))
 </code></pre>
 <h3><a class="header" href="#variables" id="variables">Variables</a></h3>
-<pre><code class="language-lisp">(define pi 3.14159)
-
-(define string &quot;my string&quot;)
-
-;;; Local state variables
-(set! &lt;name&gt; &lt;new-value&gt;)
+<pre><code class="language-python">x: int # Declare type
+x = 4 # Assign value
+x: int = 4 # Assign value (typed)
+x = y = z = 0 # Multiple assignment
+x += 1 # Increment
+x -= 1 # Decrement
 </code></pre>
 <h3><a class="header" href="#data-types" id="data-types">Data types</a></h3>
-<pre><code class="language-lisp">;;; List
-(list 1 2 3 4)
-</code></pre>
-<h3><a class="header" href="#procedure" id="procedure">Procedure</a></h3>
-<pre><code class="language-lisp">(define (square x) (* x x))
+<pre><code class="language-python"># Basic types
+x: int
+x: float
+x: complex
+x: str
+x: bool
 
-;;; Lambda
-(lambda (x) (+ x 4))
+# List
+x = [&quot;item1&quot;, &quot;item2&quot;, &quot;item3&quot;]
+x: List[str] = [&quot;item1&quot;, &quot;item2&quot;, &quot;item3&quot;] # typed
+x[0:3] # Indexing is inclusive-exclusive
+x[-3:-1] # Negative indexes count from the last item backwards
+
+# Tuple
+x = (1, 2, 3)
+x: Tuple[int, int, int] = (1, 2, 3) # typed
+
+# Dictionary
+x = {&quot;key1&quot;: 1, &quot;key2&quot;: 2}
+x: Dict[int, int] = {&quot;key1&quot;: 1, &quot;key2&quot;: 2} # typed
+
+# Option
+x: Optional[str] = some_function()
+</code></pre>
+<h3><a class="header" href="#control-flow" id="control-flow">Control flow</a></h3>
+<pre><code class="language-python"># for loop
+for i in range(10):
+    print(i)
+
+# while loop
+while i &lt; 3:
+    print(i)
+
+# if-else
+if a &lt; b:
+    # statement
+elif a == b:
+    # statement
+else:
+    # statement
+</code></pre>
+<h3><a class="header" href="#functions" id="functions">Functions</a></h3>
+<pre><code class="language-python">def my_function(arg, optional_arg = 'default value'):
+    return arg, optional_arg
+
+# Typed function
+def my_function(arg1: int, arg2: int) -&gt; Tuple[int, int]:
+    return arg1, arg2
+
+# Lambda function
+add_one = lambda x: x + 1
+
+# Decorator
+@my_decorator
+def my_function():
+    return
+</code></pre>
+<h3><a class="header" href="#classes" id="classes">Classes</a></h3>
+<pre><code class="language-python">class MyClass:
+    my_class_var = 100
+
+    def __init__(self):
+        self.my_instance_var = 3
+
+    def my_function(self):
+        return self.my_instance_var
+
+# Instantiation
+my_class_instance = MyClass()
+my_class_instance.my_function()
+my_class_instance.my_class_var
+
+# Data class
+@dataclass
+class User:
+    name: str
+    email: str
+</code></pre>
+<h3><a class="header" href="#error-handling" id="error-handling">Error handling</a></h3>
+<pre><code class="language-python">try:
+    # statement
+except ZeroDivisionError: # if an exception was raised in the try clause
+    # statement
+else: # if no exceptions were raised in the try clause
+    # statement
+finally: # always executed
+    # statement
+
+# Raise error
+raise ValueError(&quot;error message&quot;)
 </code></pre>
 
                     </main>
@@ -184,11 +261,11 @@ set!
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
                         
-                            <a rel="prev" href="07_cpp.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
-                                <i class="fa fa-angle-left"></i>
-                            </a>
-                        
 
+                        
+                            <a rel="next" href="02_typescript.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
                         
 
                         <div style="clear: both"></div>
@@ -198,11 +275,11 @@ set!
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
                 
-                    <a rel="prev" href="07_cpp.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
-                        <i class="fa fa-angle-left"></i>
-                    </a>
-                
 
+                
+                    <a rel="next" href="02_typescript.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
                 
             </nav>
 
