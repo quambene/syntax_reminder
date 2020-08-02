@@ -3,7 +3,8 @@
 ### Variables
 
 ```dart
-
+String name = 'Bob';
+const bar = 42;
 ```
 
 ### Data types
