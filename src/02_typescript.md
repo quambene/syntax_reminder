@@ -109,3 +109,22 @@ class Person {
 // Instantiation
 let person = new Person();
 ```
+
+### Error handling
+
+```javascript
+try {
+    // code to try
+}
+catch (err) {
+    // code to handle errors
+    if (err instanceof Error) {
+
+    } else {
+        throw(err);
+    }
+}
+finally {
+   // code to be executed regardless of the try-catch result
+}
+```
