@@ -7,12 +7,19 @@
         
         <meta name="robots" content="noindex" />
         
+        
+
+
+        <!-- Custom HTML head -->
+        
+
 
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#ffffff" />
 
+        <link rel="icon" href="favicon.svg">
         <link rel="shortcut icon" href="favicon.png">
         <link rel="stylesheet" href="css/variables.css">
         <link rel="stylesheet" href="css/general.css">
@@ -21,8 +28,9 @@
 
         <!-- Fonts -->
         <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
-        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
-        <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:500" rel="stylesheet" type="text/css">
+        
+        <link rel="stylesheet" href="fonts/fonts.css">
+        
 
         <!-- Highlight.js Stylesheets -->
         <link rel="stylesheet" href="highlight.css">
@@ -38,7 +46,7 @@
         <!-- Provide site root to javascript -->
         <script type="text/javascript">
             var path_to_root = "";
-            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "light" : "light";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
         </script>
 
         <!-- Work around some values being stored in localStorage wrapped in quotes -->
@@ -368,7 +376,7 @@ finally {
 </code></pre>
 <h1><a class="header" href="#rust" id="rust">Rust</a></h1>
 <h3><a class="header" href="#print-2" id="print-2">Print</a></h3>
-<pre><pre class="playpen"><code class="language-rust">
+<pre><pre class="playground"><code class="language-rust">
 <span class="boring">#![allow(unused)]
 </span><span class="boring">fn main() {
 </span>let name = &quot;world&quot;;
@@ -377,7 +385,7 @@ println!(&quot;Debug: {:?}&quot;, name); // for debugging
 <span class="boring">}
 </span></code></pre></pre>
 <h3><a class="header" href="#variables-2" id="variables-2">Variables</a></h3>
-<pre><pre class="playpen"><code class="language-rust">
+<pre><pre class="playground"><code class="language-rust">
 <span class="boring">#![allow(unused)]
 </span><span class="boring">fn main() {
 </span>let x; // declare
@@ -396,7 +404,7 @@ let r#fn = &quot;name&quot;; // raw identifier for reserved keywords
 <span class="boring">}
 </span></code></pre></pre>
 <h3><a class="header" href="#data-types-2" id="data-types-2">Data types</a></h3>
-<pre><pre class="playpen"><code class="language-rust">
+<pre><pre class="playground"><code class="language-rust">
 <span class="boring">#![allow(unused)]
 </span><span class="boring">fn main() {
 </span>// Basic types
@@ -462,7 +470,7 @@ Arc&lt;T&gt; // thread-safe reference-counting pointer (atomically reference cou
 <span class="boring">}
 </span></code></pre></pre>
 <h3><a class="header" href="#control-flow-2" id="control-flow-2">Control flow</a></h3>
-<pre><pre class="playpen"><code class="language-rust">
+<pre><pre class="playground"><code class="language-rust">
 <span class="boring">#![allow(unused)]
 </span><span class="boring">fn main() {
 </span>// for loop
@@ -509,7 +517,7 @@ while let Some(i) = my_option  {
 <span class="boring">}
 </span></code></pre></pre>
 <h3><a class="header" href="#functions-2" id="functions-2">Functions</a></h3>
-<pre><pre class="playpen"><code class="language-rust">
+<pre><pre class="playground"><code class="language-rust">
 <span class="boring">#![allow(unused)]
 </span><span class="boring">fn main() {
 </span>fn my_function(x: i32) -&gt; i32 {
@@ -537,7 +545,7 @@ let my_closure = |i: i32| -&gt; i32 { i + 1 }; // typed
 <span class="boring">}
 </span></code></pre></pre>
 <h3><a class="header" href="#generics-parametric-polymorphism" id="generics-parametric-polymorphism">Generics (parametric polymorphism)</a></h3>
-<pre><pre class="playpen"><code class="language-rust">
+<pre><pre class="playground"><code class="language-rust">
 <span class="boring">#![allow(unused)]
 </span><span class="boring">fn main() {
 </span>fn my_generic_function&lt;T&gt;(list: &amp;[T]) -&gt; T {
@@ -552,7 +560,7 @@ impl&lt;T&gt; MyGenericStruct&lt;T&gt; {
 <span class="boring">}
 </span></code></pre></pre>
 <h3><a class="header" href="#traits-ad-hoc-polymorphism" id="traits-ad-hoc-polymorphism">Traits (ad-hoc polymorphism)</a></h3>
-<pre><pre class="playpen"><code class="language-rust">
+<pre><pre class="playground"><code class="language-rust">
 <span class="boring">#![allow(unused)]
 </span><span class="boring">fn main() {
 </span>// A collection of methods defined for an unknown type
@@ -588,7 +596,7 @@ fn do_something(x: &amp;MyTrait) { // trait object &amp;MyTrait
 <span class="boring">}
 </span></code></pre></pre>
 <h3><a class="header" href="#lifetimes" id="lifetimes">Lifetimes</a></h3>
-<pre><pre class="playpen"><code class="language-rust">
+<pre><pre class="playground"><code class="language-rust">
 <span class="boring">#![allow(unused)]
 </span><span class="boring">fn main() {
 </span>/*  Every reference has a lifetime;
@@ -604,7 +612,7 @@ fn longest&lt;'a&gt;(x: &amp;'a str, y: &amp;'a str) -&gt; &amp;'a str {
 <span class="boring">}
 </span></code></pre></pre>
 <h3><a class="header" href="#macros" id="macros">Macros</a></h3>
-<pre><pre class="playpen"><code class="language-rust">use my_macro::MyMacro;
+<pre><pre class="playground"><code class="language-rust">use my_macro::MyMacro;
 use my_macro_derive::MyMacro;
 
 #[derive(MyMacro)]
@@ -618,7 +626,7 @@ fn main() {
 unimplemented!() // satisfies the type checker without providing an implementation
 </code></pre></pre>
 <h3><a class="header" href="#error-handling-2" id="error-handling-2">Error handling</a></h3>
-<pre><pre class="playpen"><code class="language-rust">
+<pre><pre class="playground"><code class="language-rust">
 <span class="boring">#![allow(unused)]
 </span><span class="boring">fn main() {
 </span>// ? operator (propagating errors)
@@ -630,7 +638,7 @@ fn read_username_from_file() -&gt; Result&lt;String, io::Error&gt; {
 <span class="boring">}
 </span></code></pre></pre>
 <h3><a class="header" href="#modules" id="modules">Modules</a></h3>
-<pre><pre class="playpen"><code class="language-rust">
+<pre><pre class="playground"><code class="language-rust">
 <span class="boring">#![allow(unused)]
 </span><span class="boring">fn main() {
 </span>// A collection of items: functions, structs, traits, impl blocks, and other modules
@@ -1285,7 +1293,7 @@ class MyDerivedClass2: public MyBaseClass {
 </code></pre>
 <h1><a class="header" href="#scheme" id="scheme">Scheme</a></h1>
 <h3><a class="header" href="#prefix-notation" id="prefix-notation">Prefix notation</a></h3>
-<pre><code class="language-lisp">;;; Combination
+<pre><code class="language-haskell">;;; Combination
 (+ 5 64)
 
 ;;; Fundamental forms
@@ -1294,10 +1302,10 @@ lambda
 set!
 </code></pre>
 <h3><a class="header" href="#print-7" id="print-7">Print</a></h3>
-<pre><code class="language-lisp">(write-line &quot;hello world&quot;)
+<pre><code class="language-haskell">(write-line &quot;hello world&quot;)
 </code></pre>
 <h3><a class="header" href="#variables-7" id="variables-7">Variables</a></h3>
-<pre><code class="language-lisp">(define pi 3.14159)
+<pre><code class="language-haskell">(define pi 3.14159)
 
 (define string &quot;my string&quot;)
 
@@ -1305,34 +1313,166 @@ set!
 (set! &lt;name&gt; &lt;new-value&gt;)
 </code></pre>
 <h3><a class="header" href="#data-types-7" id="data-types-7">Data types</a></h3>
-<pre><code class="language-lisp">;;; List
+<pre><code class="language-haskell">;;; List
 (list 1 2 3 4)
 </code></pre>
 <h3><a class="header" href="#procedure" id="procedure">Procedure</a></h3>
-<pre><code class="language-lisp">(define (square x) (* x x))
+<pre><code class="language-haskell">(define (square x) (* x x))
 
 ;;; Lambda
 (lambda (x) (+ x 4))
 </code></pre>
 <h1><a class="header" href="#dart" id="dart">Dart</a></h1>
 <h3><a class="header" href="#variables-8" id="variables-8">Variables</a></h3>
-<pre><code class="language-dart">String name = 'Bob';
+<pre><code class="language-dart">var x = 'Smith';
+String x = 'Bob';
+int x = 10;
 const bar = 42;
 </code></pre>
 <h3><a class="header" href="#data-types-8" id="data-types-8">Data types</a></h3>
-<pre><code class="language-dart">
+<pre><code class="language-dart">// Basic types
+String x;
+int x:
+double x;
+bool x;
+
+// List
+var lst = new List(5) // fixed length
+var lst = [1, 2, 3] // growable length
+lst[0] = 'value' // initialize
+
+// Map
+var mp = { 'key1': 'value1', 'key2': 'value2' };
+Map&lt;String, String&gt; m = { 'key1': 'value1', 'key2': 'value2' }; // typed
+
+// Enum
+enum Color { Red, Green, Blue };
 </code></pre>
 <h3><a class="header" href="#control-flow-6" id="control-flow-6">Control flow</a></h3>
-<pre><code class="language-dart">
+<pre><code class="language-dart">// for loop
+for (var i = 0; i &lt;= 3; i++) {
+    print(i);
+}
+
+// for ... in loop
+for (car in cars) {
+    print(car);
+}
+
+// while loop
+while (i &lt;= 5) {
+    print(i);
+    i++;
+}
+
+// do ... while loop
+do {
+    print(i);
+    i++;
+}
+while (i &lt;= 5);
+
+// if-else
+if (a &lt; b) {
+    // statement
+} else if (a == b) {
+    // statement
+} else {
+    // statement
+}
+
+// switch
+switch (variable_expression) {
+    case constant_expr1: {
+        //statement
+    }
+    break;
+
+    case constant_expr2: {
+        //statement
+    }
+    break;
+
+    default: {
+        //statement
+    }
+    break;
+}
 </code></pre>
 <h3><a class="header" href="#functions-7" id="functions-7">Functions</a></h3>
-<pre><code class="language-dart">
+<pre><code class="language-dart">int my_function(int param, [int optional_param], {int default_param = 42} ) {
+    return param;
+}
+
+// Lambda functions
+int my_lambda() =&gt; 42;
 </code></pre>
 <h3><a class="header" href="#classes-4" id="classes-4">Classes</a></h3>
-<pre><code class="language-dart">
+<pre><code class="language-dart">class User {
+    static String name;
+
+    // // class constructor
+    User() {
+        // ...
+    }
+
+    // named constructor
+    Car.myConstructor(String param) {
+        // ...
+    }
+
+    void set user_name(String name) {
+        this.name = name;
+    }
+
+    String get user_name {
+        return name;
+    }
+}
+
+// Inheritance and method overriding
+class ParentClass {
+    void my_method() {
+        // ...
+    }
+}
+
+class ChildClass extends ParentClass {
+    @override
+    void my_method() {
+        // ...
+    }
+}
+</code></pre>
+<h3><a class="header" href="#interfaces-3" id="interfaces-3">Interfaces</a></h3>
+<pre><code class="language-dart">class MyInterface {
+   void my_function() {}
+}
+
+class MyClass implements MyInterface {
+   void my_function() {  
+      // implementation
+   }
+}
+</code></pre>
+<h3><a class="header" href="#async" id="async">Async</a></h3>
+<pre><code class="language-dart">Future&lt;String&gt; fut_str = file.readAsString();
+fut_str.then((data) =&gt; print(data));
+</code></pre>
+<h3><a class="header" href="#concurrency-1" id="concurrency-1">Concurrency</a></h3>
+<pre><code class="language-dart">Isolate.spawn(spawned_function1, message1);
+Isolate.spawn(spawned_function2, message2);
 </code></pre>
 <h3><a class="header" href="#error-handling-5" id="error-handling-5">Error handling</a></h3>
-<pre><code class="language-dart">
+<pre><code class="language-dart">try {
+   // code that might throw an exception
+}
+on Exception1 {
+   // code for handling exception
+}
+catch Exception2 {
+   // code for handling exception
+}
 </code></pre>
 
                     </main>
@@ -1361,10 +1501,10 @@ const bar = 42;
         
 
         
-        
+
         
         <script type="text/javascript">
-            window.playpen_copyable = true;
+            window.playground_copyable = true;
         </script>
         
 
