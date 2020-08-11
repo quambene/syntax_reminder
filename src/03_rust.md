@@ -151,6 +151,7 @@ impl MyStruct { // implement struct
         // ...
     }
 }
+my_struct.my_function(); // call method
 
 // Associated function
 impl MyStruct {
@@ -158,6 +159,7 @@ impl MyStruct {
         // ...
     }
 }
+MyStruct::my_function(); // call associated function
 
 // Closure
 let my_closure = |i| i + 1;
