@@ -107,6 +107,9 @@ int my_lambda() => 42;
 ```dart
 class User {
     static String name;
+    final String email;
+    int myPublicVariable;
+    int _myPrivateVariable;
 
     // // class constructor
     User() {
