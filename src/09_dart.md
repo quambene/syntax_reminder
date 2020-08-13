@@ -1,11 +1,17 @@
 # Dart
 
+### Print
+
+```dart
+var name = "world";
+print('Hello $name');
+```
+
 ### Variables
 
 ```dart
 var x = 'Smith';
-String x = 'Bob';
-int x = 10;
+String x = 'Bob'; // typed
 const bar = 42;
 ```
 
