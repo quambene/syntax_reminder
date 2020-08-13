@@ -161,6 +161,11 @@ class MyClass implements MyInterface {
 ```dart
 Future<String> fut_str = file.readAsString();
 fut_str.then((data) => print(data));
+
+// async-await
+Future<void> my_function() async {
+    await my_async_function();
+}
 ```
 
 ### Concurrency
