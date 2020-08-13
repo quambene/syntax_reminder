@@ -294,6 +294,11 @@ class MyClass implements MyInterface {
 <h3><a class="header" href="#async" id="async">Async</a></h3>
 <pre><code class="language-dart">Future&lt;String&gt; fut_str = file.readAsString();
 fut_str.then((data) =&gt; print(data));
+
+// async-await
+Future&lt;void&gt; my_function() async {
+    await my_async_function();
+}
 </code></pre>
 <h3><a class="header" href="#concurrency" id="concurrency">Concurrency</a></h3>
 <pre><code class="language-dart">Isolate.spawn(spawned_function1, message1);
