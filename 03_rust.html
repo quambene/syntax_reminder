@@ -169,14 +169,20 @@ println!(&quot;Debug: {:?}&quot;, name); // for debugging
 <pre><pre class="playground"><code class="language-rust">
 <span class="boring">#![allow(unused)]
 </span><span class="boring">fn main() {
-</span>let x; // declare
+</span>/*  Ownership rules:
+    - each value in Rust has a variable that’s called its owner
+    - there can only be one owner at a time
+    - when the owner goes out of scope, the value will be dropped */
+
+let x; // declare
 x = 4; // assign value
 let x = 4;
 let x: i32 = 4; // assign value (typed)
 let _x = 4; // compiler won't warn about variable being unused
 let x = x + 1; // shadowing
 let mut x; // mutable
-let x: &amp;i32; // reference
+let x: &amp;i32; // reference: refer to some value without taking ownership of it
+*x // dereferencing
 let x: &amp;'a i32; // reference with an explicit lifetime
 let x: &amp;'a mut i32; // mutable reference with an explicit lifetime
 const MYCONST: f32 = 3.14; // immutable value
