@@ -11,6 +11,11 @@ println!("Debug: {:?}", name); // for debugging
 ### Variables
 
 ```rust
+/*  Ownership rules:
+    - each value in Rust has a variable that’s called its owner
+    - there can only be one owner at a time
+    - when the owner goes out of scope, the value will be dropped */
+
 let x; // declare
 x = 4; // assign value
 let x = 4;
@@ -18,7 +23,8 @@ let x: i32 = 4; // assign value (typed)
 let _x = 4; // compiler won't warn about variable being unused
 let x = x + 1; // shadowing
 let mut x; // mutable
-let x: &i32; // reference
+let x: &i32; // reference: refer to some value without taking ownership of it
+*x // dereferencing
 let x: &'a i32; // reference with an explicit lifetime
 let x: &'a mut i32; // mutable reference with an explicit lifetime
 const MYCONST: f32 = 3.14; // immutable value
