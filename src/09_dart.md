@@ -105,30 +105,45 @@ int my_lambda() => 42;
 ### Classes
 
 ```dart
-class User {
+class MyClass {
     static String name;
     final String email;
     int myPublicVariable;
     int _myPrivateVariable;
 
     // // class constructor
-    User() {
+    MyClass() {
         // ...
     }
 
     // named constructor
-    Car.myConstructor(String param) {
+    MyClass.myConstructor(String param) {
         // ...
     }
 
-    void set user_name(String name) {
+    // static method
+    static void myStaticMethod() {
+        // ...
+    }
+
+    // public method
+    public void myPublicMethod() {
+        // ...
+    }
+
+    void set name(String name) {
         this.name = name;
     }
 
-    String get user_name {
+    String get name {
         return name;
     }
 }
+
+MyClass myObject = new MyClass(); // Create instance
+myObject.name; // Access attribute
+myObject.myPublicMethod(); // Call method
+MyClass.myStaticMethod(); // Call static method
 
 // Inheritance and method overriding
 class ParentClass {
