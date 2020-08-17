@@ -948,8 +948,8 @@ public static int myMethod(int x) {
 // Instantiation
 MyClass myObject = new MyClass();
 myObject.x;
-myStaticMethod();
-myObject.myPublicMethod();
+myObject.myPublicMethod(); // Call method
+MyClass.myStaticMethod(); // Call static method
 
 // Inheritance
 class Vehicle {
@@ -1419,30 +1419,45 @@ switch (variable_expression) {
 int my_lambda() =&gt; 42;
 </code></pre>
 <h3><a class="header" href="#classes-4" id="classes-4">Classes</a></h3>
-<pre><code class="language-dart">class User {
+<pre><code class="language-dart">class MyClass {
     static String name;
     final String email;
     int myPublicVariable;
     int _myPrivateVariable;
 
     // // class constructor
-    User() {
+    MyClass() {
         // ...
     }
 
     // named constructor
-    Car.myConstructor(String param) {
+    MyClass.myConstructor(String param) {
         // ...
     }
 
-    void set user_name(String name) {
+    // static method
+    static void myStaticMethod() {
+        // ...
+    }
+
+    // public method
+    public void myPublicMethod() {
+        // ...
+    }
+
+    void set name(String name) {
         this.name = name;
     }
 
-    String get user_name {
+    String get name {
         return name;
     }
 }
+
+MyClass myObject = new MyClass(); // Create instance
+myObject.name; // Access attribute
+myObject.myPublicMethod(); // Call method
+MyClass.myStaticMethod(); // Call static method
 
 // Inheritance and method overriding
 class ParentClass {
