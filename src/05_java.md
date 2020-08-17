@@ -120,8 +120,8 @@ public class MyClass {
 // Instantiation
 MyClass myObject = new MyClass();
 myObject.x;
-myStaticMethod();
-myObject.myPublicMethod();
+myObject.myPublicMethod(); // Call method
+MyClass.myStaticMethod(); // Call static method
 
 // Inheritance
 class Vehicle {
