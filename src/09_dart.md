@@ -111,10 +111,15 @@ class MyClass {
     int myPublicVariable;
     int _myPrivateVariable;
 
-    // // class constructor
+    // class constructor
     MyClass() {
         // ...
     }
+
+    // initializer list
+    MyClass(String param1, String param2)
+    : this.name = param1,
+      this.email = param2;
 
     // named constructor
     MyClass.myConstructor(String param) {
