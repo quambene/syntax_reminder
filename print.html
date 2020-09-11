@@ -1334,6 +1334,7 @@ set!
 <h3><a class="header" href="#print-8" id="print-8">Print</a></h3>
 <pre><code class="language-dart">var name = &quot;world&quot;;
 print('Hello $name');
+print('Hello ${name}');
 </code></pre>
 <h3><a class="header" href="#variables-8" id="variables-8">Variables</a></h3>
 <pre><code class="language-dart">var x = 'Smith';
@@ -1421,7 +1422,10 @@ int my_lambda() =&gt; 42;
 <h3><a class="header" href="#classes-4" id="classes-4">Classes</a></h3>
 <pre><code class="language-dart">class MyClass {
     static String name;
-    final String email;
+    final int myFinalVar1;
+    final int myFinalVar2;
+    int myVar1;
+    int myVar2;
     int myPublicVariable;
     int _myPrivateVariable;
 
@@ -1430,10 +1434,19 @@ int my_lambda() =&gt; 42;
         // ...
     }
 
+    // parameterized constructor
+    MyClass(String param1, String param2) {
+        this.myVar1 = param1;
+        this.myVar2 = param2;
+    }
+
+    // parameterized constructor (short form)
+    MyClass({this.myVar1, this.myVar2});
+
     // initializer list
     MyClass(String param1, String param2)
-    : this.name = param1,
-      this.email = param2;
+    : this.myFinalVar1 = param1,
+      this.myFinalVar2 = param2;
 
     // named constructor
     MyClass.myConstructor(String param) {
