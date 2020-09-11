@@ -5,6 +5,7 @@
 ```dart
 var name = "world";
 print('Hello $name');
+print('Hello ${name}');
 ```
 
 ### Variables
