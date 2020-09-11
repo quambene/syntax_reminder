@@ -107,7 +107,10 @@ int my_lambda() => 42;
 ```dart
 class MyClass {
     static String name;
-    final String email;
+    final int myFinalVar1;
+    final int myFinalVar2;
+    int myVar1;
+    int myVar2;
     int myPublicVariable;
     int _myPrivateVariable;
 
@@ -116,10 +119,19 @@ class MyClass {
         // ...
     }
 
+    // parameterized constructor
+    MyClass(String param1, String param2) {
+        this.myVar1 = param1;
+        this.myVar2 = param2;
+    }
+
+    // parameterized constructor (short form)
+    MyClass({this.myVar1, this.myVar2});
+
     // initializer list
     MyClass(String param1, String param2)
-    : this.name = param1,
-      this.email = param2;
+    : this.myFinalVar1 = param1,
+      this.myFinalVar2 = param2;
 
     // named constructor
     MyClass.myConstructor(String param) {
