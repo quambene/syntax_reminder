@@ -14,6 +14,8 @@ print('Hello ${name}');
 var x = 'Smith';
 String x = 'Bob'; // typed
 const bar = 42;
+int x = optionalValue() ?? 4; // assign a default if optionalValue returns null
+int x ??= 4; // fallback assignment
 ```
 
 ### Data types
