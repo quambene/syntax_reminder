@@ -165,8 +165,9 @@ print('Hello ${name}');
 <pre><code class="language-dart">var x = 'Smith';
 String x = 'Bob'; // typed
 const bar = 42;
-int x = optionalValue() ?? 4; // assign a default if optionalValue returns null
-int x ??= 4; // fallback assignment
+int x = optionalValue() ?? exprIfNull; // default operator
+int x ??= 4; // fallback assignment operator
+var x = condition ? exprIfTrue : exprIfFalse // conditional operator
 </code></pre>
 <h3><a class="header" href="#data-types" id="data-types">Data types</a></h3>
 <pre><code class="language-dart">// Basic types
