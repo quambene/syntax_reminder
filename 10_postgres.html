@@ -161,7 +161,7 @@
                     <main>
                         <h1><a class="header" href="#postgres" id="postgres">Postgres</a></h1>
 <h3><a class="header" href="#create" id="create">Create</a></h3>
-<pre><code class="language-postgres">create table if not exists table_name
+<pre><code class="language-sql">create table if not exists table_name
 (
     id         serial primary key,
     first_name varchar not null
@@ -174,7 +174,7 @@ values (1, 'Peter'),
        (2, 'Anna');
 </code></pre>
 <h3><a class="header" href="#update" id="update">Update</a></h3>
-<pre><code class="language-postgres">update table_name t
+<pre><code class="language-sql">update table_name t
 set first_name = u.first_name
 from (values (1, 'Pete'),
              (2, 'Anne')
@@ -182,15 +182,15 @@ from (values (1, 'Pete'),
 where u.id = t.id;
 </code></pre>
 <h3><a class="header" href="#delete" id="delete">Delete</a></h3>
-<pre><code class="language-postgres">delete
+<pre><code class="language-sql">delete
 from table_name
 where id = 1;
 </code></pre>
 <h3><a class="header" href="#read" id="read">Read</a></h3>
-<pre><code class="language-postgres">select * from table_name;
+<pre><code class="language-sql">select * from table_name;
 </code></pre>
 <h3><a class="header" href="#alter" id="alter">Alter</a></h3>
-<pre><code class="language-postgres">alter table table_name
+<pre><code class="language-sql">alter table table_name
     add column last_name varchar not null;
 
 alter table table_name
