@@ -36,14 +36,14 @@ let x: undefined;
 // Array
 let arr: number[] = [1, 2, 3];
 let arr: Array<number> = [1, 2, 3];
-let first_arr = arr[0]
+let first_arr = arr[0];
 
 // Tuple
-let tup: [string, number] = ['hello', 4]
+let tup: [string, number] = ['hello', 4];
 
 // Enum
 enum Color { Red, Green, Blue };
-let green: Color = Color.Green
+let green: Color = Color.Green;
 ```
 
 ### Control flow
