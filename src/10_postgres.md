@@ -1,5 +1,11 @@
 # Postgres
 
+- [Create](#create)
+- [Update](#update)
+- [Delete](#delete)
+- [Read](#read)
+- [Alter](#alter)
+
 ### Create
 
 ```sql

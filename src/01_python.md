@@ -1,5 +1,13 @@
 # Python
 
+- [Print](#print)
+- [Variables](#variables)
+- [Data types](#data-types)
+- [Control flow](#control-flow)
+- [Functions](#functions)
+- [Classes](#classes)
+- [Error handling](#error-handling)
+
 ### Print
 
 ```python
