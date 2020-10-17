@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>Dart - quambene&#x27;s blog</title>
+        <title>Markdown - quambene&#x27;s blog</title>
         
         
 
@@ -93,7 +93,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><a href="01_python.html">Python</a></li><li class="chapter-item expanded affix "><a href="02_typescript.html">Typescript</a></li><li class="chapter-item expanded affix "><a href="03_rust.html">Rust</a></li><li class="chapter-item expanded affix "><a href="04_go.html">Go</a></li><li class="chapter-item expanded affix "><a href="05_java.html">Java</a></li><li class="chapter-item expanded affix "><a href="06_c.html">C</a></li><li class="chapter-item expanded affix "><a href="07_cpp.html">C++</a></li><li class="chapter-item expanded affix "><a href="08_scheme.html">Scheme</a></li><li class="chapter-item expanded affix "><a href="09_dart.html" class="active">Dart</a></li><li class="chapter-item expanded affix "><a href="10_postgres.html">Postgres</a></li><li class="chapter-item expanded affix "><a href="11_markdown.html">Markdown</a></li><li class="chapter-item expanded affix "><a href="12_html.html">HTML</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="01_python.html">Python</a></li><li class="chapter-item expanded affix "><a href="02_typescript.html">Typescript</a></li><li class="chapter-item expanded affix "><a href="03_rust.html">Rust</a></li><li class="chapter-item expanded affix "><a href="04_go.html">Go</a></li><li class="chapter-item expanded affix "><a href="05_java.html">Java</a></li><li class="chapter-item expanded affix "><a href="06_c.html">C</a></li><li class="chapter-item expanded affix "><a href="07_cpp.html">C++</a></li><li class="chapter-item expanded affix "><a href="08_scheme.html">Scheme</a></li><li class="chapter-item expanded affix "><a href="09_dart.html">Dart</a></li><li class="chapter-item expanded affix "><a href="10_postgres.html">Postgres</a></li><li class="chapter-item expanded affix "><a href="11_markdown.html" class="active">Markdown</a></li><li class="chapter-item expanded affix "><a href="12_html.html">HTML</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -159,230 +159,54 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1><a class="header" href="#dart" id="dart">Dart</a></h1>
+                        <h1><a class="header" href="#markdown" id="markdown">Markdown</a></h1>
+<h3><a class="header" href="#contents" id="contents">Contents</a></h3>
 <ul>
-<li><a href="#print">Print</a></li>
-<li><a href="#variables">Variables</a></li>
-<li><a href="#data-types">Data types</a></li>
-<li><a href="#control-flow">Control flow</a></li>
-<li><a href="#functions">Functions</a></li>
-<li><a href="#classes">Classes</a></li>
-<li><a href="#interfaces">Interfaces</a></li>
-<li><a href="#async">Async</a></li>
-<li><a href="#concurrency">Concurrency</a></li>
-<li><a href="#error-handling">Error handling</a></li>
+<li><a href="#bulleted-list">Bulleted list</a></li>
+<li><a href="#numbered-list">Numbered list</a></li>
+<li><a href="#emphasis">Emphasis</a></li>
+<li><a href="#link">Link</a></li>
+<li><a href="#inline-code-block">Inline code block</a></li>
+<li><a href="#blockquotes">Blockquotes</a></li>
+<li><a href="#table">Table</a></li>
 </ul>
-<h3><a class="header" href="#print" id="print">Print</a></h3>
-<pre><code class="language-dart">var name = &quot;world&quot;;
-print('Hello $name');
-print('Hello ${name}');
-</code></pre>
-<h3><a class="header" href="#variables" id="variables">Variables</a></h3>
-<pre><code class="language-dart">var x = 'Smith';
-String x = 'Bob'; // typed
-const bar = 42;
-int x = optionalValue() ?? exprIfNull; // default operator
-int x ??= 4; // fallback assignment operator
-var x = condition ? exprIfTrue : exprIfFalse // conditional operator
-</code></pre>
-<h3><a class="header" href="#data-types" id="data-types">Data types</a></h3>
-<pre><code class="language-dart">// Basic types
-String x;
-int x:
-double x;
-bool x;
-
-// List
-var lst = new List(5) // fixed length
-var lst = [1, 2, 3] // growable length
-lst[0] = 'value' // initialize
-
-// Map
-var mp = { 'key1': 'value1', 'key2': 'value2' };
-Map&lt;String, String&gt; m = { 'key1': 'value1', 'key2': 'value2' }; // typed
-
-// Enum
-enum Color { Red, Green, Blue };
-</code></pre>
-<h3><a class="header" href="#control-flow" id="control-flow">Control flow</a></h3>
-<pre><code class="language-dart">// for loop
-for (var i = 0; i &lt;= 3; i++) {
-    print(i);
-}
-
-// for ... in loop
-for (car in cars) {
-    print(car);
-}
-
-// while loop
-while (i &lt;= 5) {
-    print(i);
-    i++;
-}
-
-// do ... while loop
-do {
-    print(i);
-    i++;
-}
-while (i &lt;= 5);
-
-// if-else
-if (a &lt; b) {
-    // statement
-} else if (a == b) {
-    // statement
-} else {
-    // statement
-}
-
-// switch
-switch (variable_expression) {
-    case constant_expr1: {
-        //statement
-    }
-    break;
-
-    case constant_expr2: {
-        //statement
-    }
-    break;
-
-    default: {
-        //statement
-    }
-    break;
-}
-</code></pre>
-<h3><a class="header" href="#functions" id="functions">Functions</a></h3>
-<pre><code class="language-dart">int my_function(int param, [int optional_param], {int default_param = 42} ) {
-    return param;
-}
-
-// Lambda functions
-int my_lambda() =&gt; 42;
-</code></pre>
-<h3><a class="header" href="#classes" id="classes">Classes</a></h3>
-<pre><code class="language-dart">class MyClass {
-    static String name;
-    final int myFinalVar1;
-    final int myFinalVar2;
-    int myVar1;
-    int myVar2;
-    int myPublicVariable;
-    int _myPrivateVariable;
-
-    // class constructor
-    MyClass() {
-        // ...
-    }
-
-    // parameterized constructor
-    MyClass(String param1, String param2) {
-        this.myVar1 = param1;
-        this.myVar2 = param2;
-    }
-
-    // parameterized constructor (short form)
-    MyClass({this.myVar1, this.myVar2});
-
-    // initializer list
-    MyClass(String param1, String param2)
-    : this.myFinalVar1 = param1,
-      this.myFinalVar2 = param2;
-
-    // named constructor
-    MyClass.myConstructor(String param) {
-        // ...
-    }
-
-    // static method
-    static void myStaticMethod() {
-        // ...
-    }
-
-    // public method
-    public void myPublicMethod() {
-        // ...
-    }
-
-    void set name(String name) {
-        this.name = name;
-    }
-
-    String get name {
-        return name;
-    }
-}
-
-MyClass myObject = new MyClass(); // Create instance
-myObject.name; // Access attribute
-myObject.myPublicMethod(); // Call method
-MyClass.myStaticMethod(); // Call static method
-
-// Inheritance and method overriding
-class ParentClass {
-    void my_method() {
-        // ...
-    }
-}
-
-class ChildClass extends ParentClass {
-    @override
-    void my_method() {
-        // ...
-    }
-}
-</code></pre>
-<h3><a class="header" href="#interfaces" id="interfaces">Interfaces</a></h3>
-<pre><code class="language-dart">class MyInterface {
-   void my_function() {}
-}
-
-class MyClass implements MyInterface {
-   void my_function() {  
-      // implementation
-   }
-}
-</code></pre>
-<h3><a class="header" href="#async" id="async">Async</a></h3>
-<pre><code class="language-dart">Future&lt;String&gt; fut_str = file.readAsString();
-fut_str.then((data) =&gt; print(data));
-
-// async-await
-Future&lt;void&gt; my_function() async {
-    await my_async_function();
-}
-</code></pre>
-<h3><a class="header" href="#concurrency" id="concurrency">Concurrency</a></h3>
-<pre><code class="language-dart">Isolate.spawn(spawned_function1, message1);
-Isolate.spawn(spawned_function2, message2);
-</code></pre>
-<h3><a class="header" href="#error-handling" id="error-handling">Error handling</a></h3>
-<pre><code class="language-dart">try {
-   // code that might throw an exception
-}
-on Exception1 {
-   // code for handling exception
-}
-catch Exception2 {
-   // code for handling exception
-}
-</code></pre>
+<h3><a class="header" href="#bulleted-list" id="bulleted-list">Bulleted list</a></h3>
+<ul>
+<li>item 1</li>
+<li>item 2</li>
+</ul>
+<h3><a class="header" href="#numbered-list" id="numbered-list">Numbered list</a></h3>
+<ol>
+<li>item 1</li>
+<li>item 2</li>
+</ol>
+<h3><a class="header" href="#emphasis" id="emphasis">Emphasis</a></h3>
+<p><strong>Bold</strong> and <em>Italic</em> and <code>Code</code> and <del>strikethrough</del></p>
+<h3><a class="header" href="#link" id="link">Link</a></h3>
+<p><a href="url">Link</a></p>
+<h3><a class="header" href="#inline-code-block" id="inline-code-block">Inline code block</a></h3>
+<p><code>var example = true</code></p>
+<h3><a class="header" href="#blockquotes" id="blockquotes">Blockquotes</a></h3>
+<blockquote>
+<p>We're living the future so the present is our past.</p>
+</blockquote>
+<h3><a class="header" href="#table" id="table">Table</a></h3>
+<table><thead><tr><th>Header 1</th><th>Header 2</th></tr></thead><tbody>
+<tr><td>Cell 1</td><td>Cell 2</td></tr>
+</tbody></table>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
                         
-                            <a rel="prev" href="08_scheme.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                            <a rel="prev" href="10_postgres.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
                             </a>
                         
 
                         
-                            <a rel="next" href="10_postgres.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <a rel="next" href="12_html.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
                         
@@ -394,13 +218,13 @@ catch Exception2 {
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
                 
-                    <a rel="prev" href="08_scheme.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <a rel="prev" href="10_postgres.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
                 
 
                 
-                    <a rel="next" href="10_postgres.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <a rel="next" href="12_html.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
                 

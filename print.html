@@ -95,7 +95,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><a href="01_python.html">Python</a></li><li class="chapter-item expanded affix "><a href="02_typescript.html">Typescript</a></li><li class="chapter-item expanded affix "><a href="03_rust.html">Rust</a></li><li class="chapter-item expanded affix "><a href="04_go.html">Go</a></li><li class="chapter-item expanded affix "><a href="05_java.html">Java</a></li><li class="chapter-item expanded affix "><a href="06_c.html">C</a></li><li class="chapter-item expanded affix "><a href="07_cpp.html">C++</a></li><li class="chapter-item expanded affix "><a href="08_scheme.html">Scheme</a></li><li class="chapter-item expanded affix "><a href="09_dart.html">Dart</a></li><li class="chapter-item expanded affix "><a href="10_postgres.html">Postgres</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="01_python.html">Python</a></li><li class="chapter-item expanded affix "><a href="02_typescript.html">Typescript</a></li><li class="chapter-item expanded affix "><a href="03_rust.html">Rust</a></li><li class="chapter-item expanded affix "><a href="04_go.html">Go</a></li><li class="chapter-item expanded affix "><a href="05_java.html">Java</a></li><li class="chapter-item expanded affix "><a href="06_c.html">C</a></li><li class="chapter-item expanded affix "><a href="07_cpp.html">C++</a></li><li class="chapter-item expanded affix "><a href="08_scheme.html">Scheme</a></li><li class="chapter-item expanded affix "><a href="09_dart.html">Dart</a></li><li class="chapter-item expanded affix "><a href="10_postgres.html">Postgres</a></li><li class="chapter-item expanded affix "><a href="11_markdown.html">Markdown</a></li><li class="chapter-item expanded affix "><a href="12_html.html">HTML</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -162,6 +162,15 @@
                 <div id="content" class="content">
                     <main>
                         <h1><a class="header" href="#python" id="python">Python</a></h1>
+<ul>
+<li><a href="01_python.html#print">Print</a></li>
+<li><a href="01_python.html#variables">Variables</a></li>
+<li><a href="01_python.html#data-types">Data types</a></li>
+<li><a href="01_python.html#control-flow">Control flow</a></li>
+<li><a href="01_python.html#functions">Functions</a></li>
+<li><a href="01_python.html#classes">Classes</a></li>
+<li><a href="01_python.html#error-handling">Error handling</a></li>
+</ul>
 <h3><a class="header" href="#print" id="print">Print</a></h3>
 <pre><code class="language-python">name = &quot;world&quot;
 print(&quot;Hello&quot;, name)
@@ -270,6 +279,15 @@ finally: # always executed
 raise ValueError(&quot;error message&quot;)
 </code></pre>
 <h1><a class="header" href="#typescript" id="typescript">Typescript</a></h1>
+<ul>
+<li><a href="02_typescript.html#print">Print</a></li>
+<li><a href="02_typescript.html#variables">Variables</a></li>
+<li><a href="02_typescript.html#data-types">Data types</a></li>
+<li><a href="02_typescript.html#control-flow">Control flow</a></li>
+<li><a href="02_typescript.html#functions">Functions</a></li>
+<li><a href="02_typescript.html#classes">Classes</a></li>
+<li><a href="02_typescript.html#error-handling">Error handling</a></li>
+</ul>
 <h3><a class="header" href="#print-1" id="print-1">Print</a></h3>
 <pre><code class="language-javascript">console.log('Hello world');
 console.table({foo, bar});
@@ -298,14 +316,14 @@ let x: undefined;
 // Array
 let arr: number[] = [1, 2, 3];
 let arr: Array&lt;number&gt; = [1, 2, 3];
-let first_arr = arr[0]
+let first_arr = arr[0];
 
 // Tuple
-let tup: [string, number] = ['hello', 4]
+let tup: [string, number] = ['hello', 4];
 
 // Enum
 enum Color { Red, Green, Blue };
-let green: Color = Color.Green
+let green: Color = Color.Green;
 </code></pre>
 <h3><a class="header" href="#control-flow-1" id="control-flow-1">Control flow</a></h3>
 <pre><code class="language-javascript">// while loop
@@ -707,6 +725,16 @@ cargo build --release
 cargo clean
 </code></pre>
 <h1><a class="header" href="#go" id="go">Go</a></h1>
+<ul>
+<li><a href="04_go.html#print">Print</a></li>
+<li><a href="04_go.html#variables">Variables</a></li>
+<li><a href="04_go.html#data-types">Data types</a></li>
+<li><a href="04_go.html#control-flow">Control flow</a></li>
+<li><a href="04_go.html#functions">Functions</a></li>
+<li><a href="04_go.html#interfaces">Interfaces</a></li>
+<li><a href="04_go.html#error-handling">Error handling</a></li>
+<li><a href="04_go.html#concurrency">Concurrency</a></li>
+</ul>
 <h3><a class="header" href="#print-3" id="print-3">Print</a></h3>
 <pre><code class="language-go">fmt.Println(&quot;Hello World&quot;)
 fmt.Println(&quot;1+1 =&quot;, 1+1)
@@ -849,6 +877,17 @@ go func() { myChannel &lt;- &quot;ping&quot; }() // Send value into channel
 msg := &lt;-myChannel // Receive value from channel
 </code></pre>
 <h1><a class="header" href="#java" id="java">Java</a></h1>
+<ul>
+<li><a href="05_java.html#print">Print</a></li>
+<li><a href="05_java.html#variables">Variables</a></li>
+<li><a href="05_java.html#data-types">Data types</a></li>
+<li><a href="05_java.html#control-flow">Control flow</a></li>
+<li><a href="05_java.html#functions">Functions</a></li>
+<li><a href="05_java.html#classes">Classes</a></li>
+<li><a href="05_java.html#error-handling">Error handling</a></li>
+<li><a href="05_java.html#interfaces">Interfaces</a></li>
+<li><a href="05_java.html#generics">Generics</a></li>
+</ul>
 <h3><a class="header" href="#print-4" id="print-4">Print</a></h3>
 <pre><code class="language-java">System.out.println(&quot;Hello World&quot;);
 </code></pre>
@@ -1017,6 +1056,18 @@ public class MyGenericClass&lt;T&gt; {
 }
 </code></pre>
 <h1><a class="header" href="#c" id="c">C</a></h1>
+<ul>
+<li><a href="06_c.html#print">Print</a></li>
+<li><a href="06_c.html#variables">Variables</a></li>
+<li><a href="06_c.html#data-types">Data types</a></li>
+<li><a href="06_c.html#control-flow">Control flow</a></li>
+<li><a href="06_c.html#functions">Functions</a></li>
+<li><a href="06_c.html#error-handling">Error handling</a></li>
+<li><a href="06_c.html#dynamic-memory-allocation">Dynamic memory allocation</a></li>
+<li><a href="06_c.html#preprocessors">Preprocessors</a></li>
+<li><a href="06_c.html#macros">Macros</a></li>
+<li><a href="06_c.html#header-files">Header files</a></li>
+</ul>
 <h3><a class="header" href="#print-5" id="print-5">Print</a></h3>
 <pre><code class="language-c">printf(&quot;Hello World! \n&quot;);
 </code></pre>
@@ -1203,6 +1254,15 @@ __LINE__
 #include &quot;my_header.h&quot;
 </code></pre>
 <h1><a class="header" href="#c-1" id="c-1">C++</a></h1>
+<ul>
+<li><a href="07_cpp.html#print">Print</a></li>
+<li><a href="07_cpp.html#variables">Variables</a></li>
+<li><a href="07_cpp.html#data-types">Data types</a></li>
+<li><a href="07_cpp.html#control-flow">Control flow</a></li>
+<li><a href="07_cpp.html#functions">Functions</a></li>
+<li><a href="07_cpp.html#classes">Classes</a></li>
+<li><a href="07_cpp.html#interfaces">Interfaces</a></li>
+</ul>
 <h3><a class="header" href="#print-6" id="print-6">Print</a></h3>
 <pre><code class="language-cpp">#include &lt;iostream&gt;
 cout &lt;&lt; &quot;Hello World&quot;;
@@ -1335,6 +1395,18 @@ set!
 (lambda (x) (+ x 4))
 </code></pre>
 <h1><a class="header" href="#dart" id="dart">Dart</a></h1>
+<ul>
+<li><a href="09_dart.html#print">Print</a></li>
+<li><a href="09_dart.html#variables">Variables</a></li>
+<li><a href="09_dart.html#data-types">Data types</a></li>
+<li><a href="09_dart.html#control-flow">Control flow</a></li>
+<li><a href="09_dart.html#functions">Functions</a></li>
+<li><a href="09_dart.html#classes">Classes</a></li>
+<li><a href="09_dart.html#interfaces">Interfaces</a></li>
+<li><a href="09_dart.html#async">Async</a></li>
+<li><a href="09_dart.html#concurrency">Concurrency</a></li>
+<li><a href="09_dart.html#error-handling">Error handling</a></li>
+</ul>
 <h3><a class="header" href="#print-8" id="print-8">Print</a></h3>
 <pre><code class="language-dart">var name = &quot;world&quot;;
 print('Hello $name');
@@ -1534,6 +1606,13 @@ catch Exception2 {
 }
 </code></pre>
 <h1><a class="header" href="#postgres" id="postgres">Postgres</a></h1>
+<ul>
+<li><a href="10_postgres.html#create">Create</a></li>
+<li><a href="10_postgres.html#update">Update</a></li>
+<li><a href="10_postgres.html#delete">Delete</a></li>
+<li><a href="10_postgres.html#read">Read</a></li>
+<li><a href="10_postgres.html#alter">Alter</a></li>
+</ul>
 <h3><a class="header" href="#create" id="create">Create</a></h3>
 <pre><code class="language-sql">create table if not exists table_name
 (
@@ -1575,6 +1654,79 @@ alter table table_name
 
 alter table table_name
     alter column first_name set not null;
+</code></pre>
+<h1><a class="header" href="#markdown" id="markdown">Markdown</a></h1>
+<h3><a class="header" href="#contents" id="contents">Contents</a></h3>
+<ul>
+<li><a href="11_markdown.html#bulleted-list">Bulleted list</a></li>
+<li><a href="11_markdown.html#numbered-list">Numbered list</a></li>
+<li><a href="11_markdown.html#emphasis">Emphasis</a></li>
+<li><a href="11_markdown.html#link">Link</a></li>
+<li><a href="11_markdown.html#inline-code-block">Inline code block</a></li>
+<li><a href="11_markdown.html#blockquotes">Blockquotes</a></li>
+<li><a href="11_markdown.html#table">Table</a></li>
+</ul>
+<h3><a class="header" href="#bulleted-list" id="bulleted-list">Bulleted list</a></h3>
+<ul>
+<li>item 1</li>
+<li>item 2</li>
+</ul>
+<h3><a class="header" href="#numbered-list" id="numbered-list">Numbered list</a></h3>
+<ol>
+<li>item 1</li>
+<li>item 2</li>
+</ol>
+<h3><a class="header" href="#emphasis" id="emphasis">Emphasis</a></h3>
+<p><strong>Bold</strong> and <em>Italic</em> and <code>Code</code> and <del>strikethrough</del></p>
+<h3><a class="header" href="#link" id="link">Link</a></h3>
+<p><a href="url">Link</a></p>
+<h3><a class="header" href="#inline-code-block" id="inline-code-block">Inline code block</a></h3>
+<p><code>var example = true</code></p>
+<h3><a class="header" href="#blockquotes" id="blockquotes">Blockquotes</a></h3>
+<blockquote>
+<p>We're living the future so the present is our past.</p>
+</blockquote>
+<h3><a class="header" href="#table" id="table">Table</a></h3>
+<table><thead><tr><th>Header 1</th><th>Header 2</th></tr></thead><tbody>
+<tr><td>Cell 1</td><td>Cell 2</td></tr>
+</tbody></table>
+<h1><a class="header" href="#html" id="html">HTML</a></h1>
+<h3><a class="header" href="#html-tags" id="html-tags">HTML tags</a></h3>
+<pre><code class="language-html">&lt;!-- Comment tag --&gt;
+&lt;html&gt;&lt;/html&gt;           &lt;!-- Represents the root of an HTML document --&gt;
+&lt;head&gt;&lt;/head&gt;           &lt;!-- Can include &lt;title&gt;, &lt;style&gt;, &lt;base&gt;, &lt;link&gt;, &lt;meta&gt;, &lt;script&gt;, &lt;noscript&gt; --&gt;
+&lt;body&gt;&lt;/body&gt;           &lt;!-- Defines the document’s body --&gt;
+&lt;div&gt;&lt;/div&gt;             &lt;!-- Defines a division or a section --&gt;
+&lt;a&gt;&lt;/a&gt;                 &lt;!-- Defines a hyperlink --&gt;
+&lt;base&gt;                  &lt;!-- Specifies the base URL for all relative URLs --&gt;
+&lt;nav&gt;&lt;/nav&gt;             &lt;!-- Defines a set of navigation links --&gt;
+&lt;b&gt;&lt;/b&gt;                 &lt;!-- Specifies bold text --&gt;
+&lt;h1&gt;&lt;/h1&gt;               &lt;!-- Defines HTML headings --&gt;
+&lt;h6&gt;&lt;/h6&gt;               &lt;!-- Defines HTML headings --&gt;
+&lt;hr&gt;                    &lt;!-- Defines a thematic break / represents a horizontal rule --&gt;
+&lt;br&gt;                    &lt;!-- Inserts a single line break --&gt;
+&lt;em&gt;&lt;/em&gt;               &lt;!-- Emphasized text --&gt;
+&lt;strong&gt;&lt;/strong&gt;       &lt;!-- Important text --&gt;
+&lt;mark&gt;&lt;/mark&gt;           &lt;!-- Marked/highlighted text --&gt;
+&lt;span&gt;&lt;/span&gt;           &lt;!-- Used to group inline-elements --&gt;
+&lt;cite&gt;&lt;/cite&gt;           &lt;!-- The title of a work --&gt;
+&lt;dfn&gt;&lt;/dfn&gt;             &lt;!-- A definition term --&gt;
+&lt;ul&gt;&lt;/ul&gt;               &lt;!-- Defines an unordered list --&gt;
+&lt;ol&gt;&lt;/ol&gt;               &lt;!-- Defines an ordered list --&gt;
+&lt;li&gt;&lt;/li&gt;               &lt;!-- Defines a list item --&gt;
+&lt;table&gt;&lt;/table&gt;         &lt;!-- Defines a HTML table --&gt;
+&lt;tr&gt;&lt;/tr&gt;               &lt;!-- Defines a table row --&gt;
+&lt;th&gt;&lt;/th&gt;               &lt;!-- Defines a table header --&gt;
+&lt;td&gt;&lt;/td&gt;               &lt;!-- Defines a table cell --&gt;
+&lt;figure&gt;&lt;/figure&gt;       &lt;!-- Specifies self-contained content --&gt;
+&lt;header&gt;&lt;/header&gt;       &lt;!-- Represents a container for introductory content --&gt;
+&lt;footer&gt;&lt;/footer&gt;       &lt;!-- Defines a footer --&gt;
+&lt;p&gt;&lt;/p&gt;                 &lt;!-- Defines a paragraph --&gt;
+&lt;form&gt;&lt;/form&gt;           &lt;!-- Used to create an HTML form for user input --&gt;
+&lt;button&gt;&lt;/button&gt;       &lt;!-- Defines a clickable button --&gt;
+&lt;input&gt;                 &lt;!-- Specifies an input field --&gt;
+&lt;textarea&gt;&lt;/textarea&gt;   &lt;!-- Defines a multi-line text input --&gt;
+&lt;label&gt;&lt;/label&gt;         &lt;!-- Defines a label for a &lt;button&gt;, &lt;input&gt;, &lt;meter&gt;, &lt;output&gt;, &lt;progress&gt;, &lt;select&gt; or &lt;textarea&gt; --&gt;
 </code></pre>
 
                     </main>
