@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>Typescript - quambene's blog</title>
+        <title>Postgres - quambene's blog</title>
         
         
 
@@ -89,7 +89,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><a href="01_python.html">Python</a></li><li class="chapter-item expanded affix "><a href="02_typescript.html" class="active">Typescript</a></li><li class="chapter-item expanded affix "><a href="03_rust.html">Rust</a></li><li class="chapter-item expanded affix "><a href="04_go.html">Go</a></li><li class="chapter-item expanded affix "><a href="05_java.html">Java</a></li><li class="chapter-item expanded affix "><a href="06_c.html">C</a></li><li class="chapter-item expanded affix "><a href="07_cpp.html">C++</a></li><li class="chapter-item expanded affix "><a href="08_scheme.html">Scheme</a></li><li class="chapter-item expanded affix "><a href="09_dart.html">Dart</a></li><li class="chapter-item expanded affix "><a href="10_postgres.html">Postgres</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="01_python.html">Python</a></li><li class="chapter-item expanded affix "><a href="02_typescript.html">Typescript</a></li><li class="chapter-item expanded affix "><a href="03_rust.html">Rust</a></li><li class="chapter-item expanded affix "><a href="04_go.html">Go</a></li><li class="chapter-item expanded affix "><a href="05_java.html">Java</a></li><li class="chapter-item expanded affix "><a href="06_c.html">C</a></li><li class="chapter-item expanded affix "><a href="07_cpp.html">C++</a></li><li class="chapter-item expanded affix "><a href="08_scheme.html">Scheme</a></li><li class="chapter-item expanded affix "><a href="09_dart.html">Dart</a></li><li class="chapter-item expanded affix "><a href="10_postgres.html" class="active">Postgres</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -155,114 +155,48 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1><a class="header" href="#typescript" id="typescript">Typescript</a></h1>
-<h3><a class="header" href="#print" id="print">Print</a></h3>
-<pre><code class="language-javascript">console.log('Hello world');
-console.table({foo, bar});
-console.group();
-console.groupEnd();
-console.warn();
-console.error();
-console.time();
+                        <h1><a class="header" href="#postgres" id="postgres">Postgres</a></h1>
+<h3><a class="header" href="#create" id="create">Create</a></h3>
+<pre><code class="language-postgres">create table if not exists table_name
+(
+    id         serial primary key,
+    first_name varchar not null
+);
+
+create type Color as enum ('red', 'green', 'blue');
+
+insert into table_name (id, first_name)
+values (1, 'Peter'),
+       (2, 'Anna');
 </code></pre>
-<h3><a class="header" href="#variables" id="variables">Variables</a></h3>
-<pre><code class="language-javascript">let x: number = 4;
-const x: number = 2;
-let x = `Hello ${firstName} ${lastName}`; // template string
-let x = (condition) ? valueIfTrue:valueIfFalse; // conditional operator
+<h3><a class="header" href="#update" id="update">Update</a></h3>
+<pre><code class="language-postgres">update table_name t
+set first_name = u.first_name
+from (values (1, 'Pete'),
+             (2, 'Anne')
+     ) u(id, first_name)
+where u.id = t.id;
 </code></pre>
-<h3><a class="header" href="#data-types" id="data-types">Data types</a></h3>
-<pre><code class="language-javascript">// Basic types
-let x: number;
-let x: string;
-let x: boolean;
-let x: any;
-let x: void;
-let x: null;
-let x: undefined;
-
-// Array
-let arr: number[] = [1, 2, 3];
-let arr: Array&lt;number&gt; = [1, 2, 3];
-let first_arr = arr[0]
-
-// Tuple
-let tup: [string, number] = ['hello', 4]
-
-// Enum
-enum Color { Red, Green, Blue };
-let green: Color = Color.Green
+<h3><a class="header" href="#delete" id="delete">Delete</a></h3>
+<pre><code class="language-postgres">delete
+from table_name
+where id = 1;
 </code></pre>
-<h3><a class="header" href="#control-flow" id="control-flow">Control flow</a></h3>
-<pre><code class="language-javascript">// while loop
-while (i &lt; 3) {
-    // statement
- }
-
-// if-else
-if (a &lt; b) {
-    // statement
-} else if (a == b) {
-    // statement
-} else {
-    // statement
-}
-
-// switch
-switch (variable_expression) {
-    case constant_expr1: {
-        //statement
-        break;
-    }
-    case constant_expr2: {
-        //statement
-        break;
-    }
-    default: {
-        //statement
-        break;
-    }
-}
+<h3><a class="header" href="#read" id="read">Read</a></h3>
+<pre><code class="language-postgres">select * from table_name;
 </code></pre>
-<h3><a class="header" href="#functions" id="functions">Functions</a></h3>
-<pre><code class="language-javascript">function myFunction(arg: number): number {
-    return arg;
-}
+<h3><a class="header" href="#alter" id="alter">Alter</a></h3>
+<pre><code class="language-postgres">alter table table_name
+    add column last_name varchar not null;
 
-// Fat arrow function
-let evens = [2, 4, 6, 8];
-let odds = evens.map(v =&gt; v + 1);
-</code></pre>
-<h3><a class="header" href="#classes" id="classes">Classes</a></h3>
-<pre><code class="language-javascript">class Person {
-    first_name: string;
-    last_name: string;
+alter table table_name
+    drop column first_name;
 
-    constructor() {}
+alter table table_name
+    alter column first_name drop not null;
 
-    greet(): void {
-        console.log('Hello', this.first_name);
-    }
-}
-
-// Instantiation
-let person = new Person();
-</code></pre>
-<h3><a class="header" href="#error-handling" id="error-handling">Error handling</a></h3>
-<pre><code class="language-javascript">try {
-    // code to try
-}
-catch (err) {
-    // code to handle errors
-    if (err instanceof Error) {
-
-    } else {
-        throw(err);
-    }
-}
-finally {
-   // code to be executed regardless of the try-catch result
-}
+alter table table_name
+    alter column first_name set not null;
 </code></pre>
 
                     </main>
@@ -270,15 +204,11 @@ finally {
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
                         
-                            <a rel="prev" href="01_python.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                            <a rel="prev" href="09_dart.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
                             </a>
                         
 
-                        
-                            <a rel="next" href="03_rust.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
-                                <i class="fa fa-angle-right"></i>
-                            </a>
                         
 
                         <div style="clear: both"></div>
@@ -288,15 +218,11 @@ finally {
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
                 
-                    <a rel="prev" href="01_python.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <a rel="prev" href="09_dart.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
                 
 
-                
-                    <a rel="next" href="03_rust.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
-                        <i class="fa fa-angle-right"></i>
-                    </a>
                 
             </nav>
 

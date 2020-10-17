@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>Syntax reminder for polyglots</title>
+        <title>quambene's blog</title>
         
         <meta name="robots" content="noindex" />
         
@@ -91,7 +91,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><a href="01_python.html">Python</a></li><li class="chapter-item expanded affix "><a href="02_typescript.html">Typescript</a></li><li class="chapter-item expanded affix "><a href="03_rust.html">Rust</a></li><li class="chapter-item expanded affix "><a href="04_go.html">Go</a></li><li class="chapter-item expanded affix "><a href="05_java.html">Java</a></li><li class="chapter-item expanded affix "><a href="06_c.html">C</a></li><li class="chapter-item expanded affix "><a href="07_cpp.html">C++</a></li><li class="chapter-item expanded affix "><a href="08_scheme.html">Scheme</a></li><li class="chapter-item expanded affix "><a href="09_dart.html">Dart</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="01_python.html">Python</a></li><li class="chapter-item expanded affix "><a href="02_typescript.html">Typescript</a></li><li class="chapter-item expanded affix "><a href="03_rust.html">Rust</a></li><li class="chapter-item expanded affix "><a href="04_go.html">Go</a></li><li class="chapter-item expanded affix "><a href="05_java.html">Java</a></li><li class="chapter-item expanded affix "><a href="06_c.html">C</a></li><li class="chapter-item expanded affix "><a href="07_cpp.html">C++</a></li><li class="chapter-item expanded affix "><a href="08_scheme.html">Scheme</a></li><li class="chapter-item expanded affix "><a href="09_dart.html">Dart</a></li><li class="chapter-item expanded affix "><a href="10_postgres.html">Postgres</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -123,7 +123,7 @@
                         
                     </div>
 
-                    <h1 class="menu-title">Syntax reminder for polyglots</h1>
+                    <h1 class="menu-title">quambene's blog</h1>
 
                     <div class="right-buttons">
                         <a href="print.html" title="Print this book" aria-label="Print this book">
@@ -1528,6 +1528,49 @@ on Exception1 {
 catch Exception2 {
    // code for handling exception
 }
+</code></pre>
+<h1><a class="header" href="#postgres" id="postgres">Postgres</a></h1>
+<h3><a class="header" href="#create" id="create">Create</a></h3>
+<pre><code class="language-postgres">create table if not exists table_name
+(
+    id         serial primary key,
+    first_name varchar not null
+);
+
+create type Color as enum ('red', 'green', 'blue');
+
+insert into table_name (id, first_name)
+values (1, 'Peter'),
+       (2, 'Anna');
+</code></pre>
+<h3><a class="header" href="#update" id="update">Update</a></h3>
+<pre><code class="language-postgres">update table_name t
+set first_name = u.first_name
+from (values (1, 'Pete'),
+             (2, 'Anne')
+     ) u(id, first_name)
+where u.id = t.id;
+</code></pre>
+<h3><a class="header" href="#delete" id="delete">Delete</a></h3>
+<pre><code class="language-postgres">delete
+from table_name
+where id = 1;
+</code></pre>
+<h3><a class="header" href="#read" id="read">Read</a></h3>
+<pre><code class="language-postgres">select * from table_name;
+</code></pre>
+<h3><a class="header" href="#alter" id="alter">Alter</a></h3>
+<pre><code class="language-postgres">alter table table_name
+    add column last_name varchar not null;
+
+alter table table_name
+    drop column first_name;
+
+alter table table_name
+    alter column first_name drop not null;
+
+alter table table_name
+    alter column first_name set not null;
 </code></pre>
 
                     </main>
