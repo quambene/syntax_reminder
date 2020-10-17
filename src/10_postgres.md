@@ -2,7 +2,7 @@
 
 ### Create
 
-```postgres
+```sql
 create table if not exists table_name
 (
     id         serial primary key,
@@ -18,7 +18,7 @@ values (1, 'Peter'),
 
 ### Update
 
-```postgres
+```sql
 update table_name t
 set first_name = u.first_name
 from (values (1, 'Pete'),
@@ -29,7 +29,7 @@ where u.id = t.id;
 
 ### Delete
 
-```postgres
+```sql
 delete
 from table_name
 where id = 1;
@@ -37,13 +37,13 @@ where id = 1;
 
 ### Read
 
-```postgres
+```sql
 select * from table_name;
 ```
 
 ### Alter
 
-```postgres
+```sql
 alter table table_name
     add column last_name varchar not null;
 
