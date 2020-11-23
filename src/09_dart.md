@@ -7,6 +7,7 @@
 - [Functions](#functions)
 - [Classes](#classes)
 - [Interfaces](#interfaces)
+- [Generics](#generics)
 - [Async](#async)
 - [Concurrency](#concurrency)
 - [Error handling](#error-handling)
@@ -203,6 +204,16 @@ class MyClass implements MyInterface {
    void my_function() {  
       // implementation
    }
+}
+```
+
+### Generics
+
+```dart
+// Generic class
+class Property<T> {
+    T first, second;
+    Property(this.first, this.second);
 }
 ```
 
