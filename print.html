@@ -397,6 +397,23 @@ finally {
 }
 </code></pre>
 <h1><a class="header" href="#rust" id="rust">Rust</a></h1>
+<ul>
+<li><a href="03_rust.html#print">Print</a></li>
+<li><a href="03_rust.html#variables">Variables</a></li>
+<li><a href="03_rust.html#data-types">Data types</a></li>
+<li><a href="03_rust.html#control-flow">Control flow</a></li>
+<li><a href="03_rust.html#functions">Functions</a></li>
+<li><a href="03_rust.html#generics">Generics</a></li>
+<li><a href="03_rust.html#traits">Traits</a></li>
+<li><a href="03_rust.html#lifetimes">Lifetimes</a></li>
+<li><a href="03_rust.html#macros">Macros</a></li>
+<li><a href="03_rust.html#error-handling">Error handling</a></li>
+<li><a href="03_rust.html#modules">Modules</a></li>
+<li><a href="03_rust.html#crates">Crates</a></li>
+<li><a href="03_rust.html#packages">Packages</a></li>
+<li><a href="03_rust.html#external-packages">External packages</a></li>
+<li><a href="03_rust.html#cargo">Cargo</a></li>
+</ul>
 <h3><a class="header" href="#print-2" id="print-2">Print</a></h3>
 <pre><pre class="playground"><code class="language-rust">
 <span class="boring">#![allow(unused)]
@@ -1403,6 +1420,7 @@ set!
 <li><a href="09_dart.html#functions">Functions</a></li>
 <li><a href="09_dart.html#classes">Classes</a></li>
 <li><a href="09_dart.html#interfaces">Interfaces</a></li>
+<li><a href="09_dart.html#generics">Generics</a></li>
 <li><a href="09_dart.html#async">Async</a></li>
 <li><a href="09_dart.html#concurrency">Concurrency</a></li>
 <li><a href="09_dart.html#error-handling">Error handling</a></li>
@@ -1579,6 +1597,13 @@ class MyClass implements MyInterface {
    void my_function() {  
       // implementation
    }
+}
+</code></pre>
+<h3><a class="header" href="#generics-1" id="generics-1">Generics</a></h3>
+<pre><code class="language-dart">// Generic class
+class Property&lt;T&gt; {
+    T first, second;
+    Property(this.first, this.second);
 }
 </code></pre>
 <h3><a class="header" href="#async" id="async">Async</a></h3>
