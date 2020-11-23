@@ -1,5 +1,21 @@
 # Rust
 
+- [Print](#print)
+- [Variables](#variables)
+- [Data types](#data-types)
+- [Control flow](#control-flow)
+- [Functions](#functions)
+- [Generics](#generics)
+- [Traits](#traits)
+- [Lifetimes](#lifetimes)
+- [Macros](#macros)
+- [Error handling](#error-handling)
+- [Modules](#modules)
+- [Crates](#crates)
+- [Packages](#packages)
+- [External packages](#external-packages)
+- [Cargo](#cargo)
+
 ### Print
 
 ```rust
