@@ -181,7 +181,8 @@ print('Hello ${name}');
 <h3><a class="header" href="#variables" id="variables">Variables</a></h3>
 <pre><code class="language-dart">var x = 'Smith';
 String x = 'Bob'; // typed
-const bar = 42;
+final x = 42; // immutable
+const x = 42; // immutable at compile-time
 int x = optionalValue() ?? exprIfNull; // default operator
 int x ??= 4; // fallback assignment operator
 var x = condition ? exprIfTrue : exprIfFalse // conditional operator
@@ -321,6 +322,7 @@ MyClass myObject = new MyClass(); // Create instance
 myObject.name; // Access attribute
 myObject.myPublicMethod(); // Call method
 MyClass.myStaticMethod(); // Call static method
+MyClass()..myMethod(); // Cascade notation
 
 // Inheritance and method overriding
 class ParentClass {
