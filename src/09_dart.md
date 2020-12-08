@@ -7,6 +7,7 @@
 - [Functions](#functions)
 - [Classes](#classes)
 - [Interfaces](#interfaces)
+- [Mixins](#mixins)
 - [Generics](#generics)
 - [Async](#async)
 - [Concurrency](#concurrency)
