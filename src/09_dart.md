@@ -127,8 +127,8 @@ class MyClass {
     static String name;
     final int myFinalVar1;
     final int myFinalVar2;
-    int myVar1;
-    int myVar2;
+    int myProperty1;
+    int myProperty2;
     int myPublicVariable;
     int _myPrivateVariable;
 
@@ -139,12 +139,12 @@ class MyClass {
 
     // parameterized constructor
     MyClass(String param1, String param2) {
-        this.myVar1 = param1;
-        this.myVar2 = param2;
+        this.myProperty1 = param1;
+        this.myProperty2 = param2;
     }
 
     // parameterized constructor (short form)
-    MyClass({this.myVar1, this.myVar2});
+    MyClass({this.myProperty1, this.myProperty2});
 
     // initializer list
     MyClass(String param1, String param2)
@@ -176,8 +176,10 @@ class MyClass {
 }
 
 MyClass myObject = new MyClass(); // Create instance
-myObject.name; // Access attribute
+myObject.myProperty; // Access attribute
+myObject?.myProperty // Conditional access (if not null)
 myObject.myPublicMethod(); // Call method
+myObject?.myPublicMethod(); // Conditional access (if not null)
 MyClass.myStaticMethod(); // Call static method
 MyClass()..myMethod(); // Cascade notation
 
