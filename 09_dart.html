@@ -349,6 +349,20 @@ class MyClass implements MyInterface {
    }
 }
 </code></pre>
+<h3><a class="header" href="#mixins" id="mixins">Mixins</a></h3>
+<pre><code class="language-dart">mixin MyMixin {
+   void my_function() {}
+}
+
+class MyClass with MyMixin {
+    // ...
+}
+
+// Restrict types that can use a mixin
+mixin MyMixin on MyClass {
+    // ...
+}
+</code></pre>
 <h3><a class="header" href="#generics" id="generics">Generics</a></h3>
 <pre><code class="language-dart">// Generic class
 class Property&lt;T&gt; {

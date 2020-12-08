@@ -421,6 +421,7 @@ finally {
 </span>let name = &quot;world&quot;;
 println!(&quot;Hello, {}!&quot;, name);
 println!(&quot;Debug: {:?}&quot;, name); // for debugging
+println!(&quot;:#?&quot;, my_struct); // pretty-print structs
 <span class="boring">}
 </span></code></pre></pre>
 <h3><a class="header" href="#variables-2" id="variables-2">Variables</a></h3>
@@ -1599,6 +1600,20 @@ class MyClass implements MyInterface {
    void my_function() {  
       // implementation
    }
+}
+</code></pre>
+<h3><a class="header" href="#mixins" id="mixins">Mixins</a></h3>
+<pre><code class="language-dart">mixin MyMixin {
+   void my_function() {}
+}
+
+class MyClass with MyMixin {
+    // ...
+}
+
+// Restrict types that can use a mixin
+mixin MyMixin on MyClass {
+    // ...
 }
 </code></pre>
 <h3><a class="header" href="#generics-1" id="generics-1">Generics</a></h3>
