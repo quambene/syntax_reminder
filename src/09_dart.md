@@ -209,6 +209,23 @@ class MyClass implements MyInterface {
 }
 ```
 
+### Mixins
+
+```dart
+mixin MyMixin {
+   void my_function() {}
+}
+
+class MyClass with MyMixin {
+    // ...
+}
+
+// Restrict types that can use a mixin
+mixin MyMixin on MyClass {
+    // ...
+}
+```
+
 ### Generics
 
 ```dart
