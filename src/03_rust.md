@@ -22,6 +22,7 @@
 let name = "world";
 println!("Hello, {}!", name);
 println!("Debug: {:?}", name); // for debugging
+println!(":#?", my_struct); // pretty-print structs
 ```
 
 ### Variables
