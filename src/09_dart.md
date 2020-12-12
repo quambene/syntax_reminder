@@ -265,9 +265,9 @@ try {
    // code that might throw an exception
 }
 on Exception1 {
-   // code for handling exception
+   // code for handling exception1
 }
-catch Exception2 {
-   // code for handling exception
+catch (err) {
+   // code for handling other exceptions
 }
 ```
