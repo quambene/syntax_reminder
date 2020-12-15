@@ -1,6 +1,7 @@
 # Postgres
 
 - [Create](#create)
+- [Insert](#insert)
 - [Update](#update)
 - [Delete](#delete)
 - [Read](#read)
@@ -16,7 +17,11 @@ create table if not exists table_name
 );
 
 create type Color as enum ('red', 'green', 'blue');
+```
 
+### Insert
+
+```sql
 insert into table_name (id, first_name)
 values (1, 'Peter'),
        (2, 'Anna');
