@@ -1653,6 +1653,7 @@ catch (err) {
 <h1><a class="header" href="#postgres" id="postgres">Postgres</a></h1>
 <ul>
 <li><a href="10_postgres.html#create">Create</a></li>
+<li><a href="10_postgres.html#insert">Insert</a></li>
 <li><a href="10_postgres.html#update">Update</a></li>
 <li><a href="10_postgres.html#delete">Delete</a></li>
 <li><a href="10_postgres.html#read">Read</a></li>
@@ -1666,8 +1667,9 @@ catch (err) {
 );
 
 create type Color as enum ('red', 'green', 'blue');
-
-insert into table_name (id, first_name)
+</code></pre>
+<h3><a class="header" href="#insert" id="insert">Insert</a></h3>
+<pre><code class="language-sql">insert into table_name (id, first_name)
 values (1, 'Peter'),
        (2, 'Anna');
 </code></pre>
