@@ -96,6 +96,14 @@ enum Result<T, E> {
     Err(E),
 }
 
+enum Color {
+    Red,
+    Green,
+    Blue,
+}
+
+let red = Color::Red;
+
 // Struct (custom data type)
 struct User {
     username: String,
