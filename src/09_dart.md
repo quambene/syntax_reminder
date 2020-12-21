@@ -117,8 +117,19 @@ int my_function(int param, [int optional_param], {int default_param = 42} ) {
     return param;
 }
 
-// Lambda functions
+// Lambda functions (fat arrow expression)
 int my_lambda() => 42;
+
+// Lexical scope
+var name = 'peter';
+var getUpperCase = () {
+    name.toUpperCase();
+}
+
+// Closure
+var addNumber = (num i) {
+    return (num j) => i+j;
+}
 ```
 
 ### Classes
