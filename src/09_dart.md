@@ -46,6 +46,7 @@ bool x;
 var myList = new List(5) // fixed length
 var myList = [1, 2, 3] // growable length
 myList[0] = 'value' // initialize
+myList = [...myList1, ...myList2] // List comprehension
 
 // Map
 var myMap = { 'key1': 'value1', 'key2': 'value2' };
