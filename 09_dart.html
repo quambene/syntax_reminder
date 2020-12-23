@@ -196,12 +196,15 @@ double x;
 bool x;
 
 // List
-var myList = new List(5) // fixed length
+var myList = []; // initialize empty list
+var myList = List(); // initialize empty list
+var myList = List(5) // fixed length
 var myList = [1, 2, 3] // growable length
 myList[0] = 'value' // initialize
 myList = [...myList1, ...myList2] // List comprehension
 
 // Map
+var myMap = Map(); // initialize empty map
 var myMap = { 'key1': 'value1', 'key2': 'value2' };
 Map&lt;String, String&gt; myMap = { 'key1': 'value1', 'key2': 'value2' }; // typed
 
