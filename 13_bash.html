@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>Postgres - quambene&#x27;s blog</title>
+        <title>bash - quambene&#x27;s blog</title>
         
         
 
@@ -93,7 +93,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><a href="01_python.html">Python</a></li><li class="chapter-item expanded affix "><a href="02_typescript.html">Typescript</a></li><li class="chapter-item expanded affix "><a href="03_rust.html">Rust</a></li><li class="chapter-item expanded affix "><a href="04_go.html">Go</a></li><li class="chapter-item expanded affix "><a href="05_java.html">Java</a></li><li class="chapter-item expanded affix "><a href="06_c.html">C</a></li><li class="chapter-item expanded affix "><a href="07_cpp.html">C++</a></li><li class="chapter-item expanded affix "><a href="08_scheme.html">Scheme</a></li><li class="chapter-item expanded affix "><a href="09_dart.html">Dart</a></li><li class="chapter-item expanded affix "><a href="10_postgres.html" class="active">Postgres</a></li><li class="chapter-item expanded affix "><a href="11_markdown.html">Markdown</a></li><li class="chapter-item expanded affix "><a href="12_html.html">HTML</a></li><li class="chapter-item expanded affix "><a href="13_bash.html">bash</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="01_python.html">Python</a></li><li class="chapter-item expanded affix "><a href="02_typescript.html">Typescript</a></li><li class="chapter-item expanded affix "><a href="03_rust.html">Rust</a></li><li class="chapter-item expanded affix "><a href="04_go.html">Go</a></li><li class="chapter-item expanded affix "><a href="05_java.html">Java</a></li><li class="chapter-item expanded affix "><a href="06_c.html">C</a></li><li class="chapter-item expanded affix "><a href="07_cpp.html">C++</a></li><li class="chapter-item expanded affix "><a href="08_scheme.html">Scheme</a></li><li class="chapter-item expanded affix "><a href="09_dart.html">Dart</a></li><li class="chapter-item expanded affix "><a href="10_postgres.html">Postgres</a></li><li class="chapter-item expanded affix "><a href="11_markdown.html">Markdown</a></li><li class="chapter-item expanded affix "><a href="12_html.html">HTML</a></li><li class="chapter-item expanded affix "><a href="13_bash.html" class="active">bash</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -159,57 +159,74 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1><a class="header" href="#postgres" id="postgres">Postgres</a></h1>
+                        <h1><a class="header" href="#bash" id="bash">Bash</a></h1>
 <ul>
-<li><a href="#create">Create</a></li>
-<li><a href="#insert">Insert</a></li>
-<li><a href="#update">Update</a></li>
-<li><a href="#delete">Delete</a></li>
-<li><a href="#read">Read</a></li>
-<li><a href="#alter">Alter</a></li>
+<li><a href="#shebang">Shebang</a></li>
+<li><a href="#print">Print</a></li>
+<li><a href="#input">Input</a></li>
+<li><a href="#variables">Variables</a></li>
+<li><a href="#control-flow">Control flow</a></li>
 </ul>
-<h3><a class="header" href="#create" id="create">Create</a></h3>
-<pre><code class="language-sql">create table if not exists table_name
-(
-    id         serial primary key,
-    first_name varchar not null
-);
+<h3><a class="header" href="#shebang" id="shebang">Shebang</a></h3>
+<pre><code class="language-bash">#!/bin/bash
+</code></pre>
+<h3><a class="header" href="#print" id="print">Print</a></h3>
+<pre><code class="language-bash">echo $MY_VAR
+</code></pre>
+<h3><a class="header" href="#input" id="input">Input</a></h3>
+<pre><code class="language-bash">echo -e &quot;Please enter your name: &quot;
+read name
+echo &quot;Nice to meet you $name&quot;
+</code></pre>
+<h3><a class="header" href="#variables" id="variables">Variables</a></h3>
+<pre><code class="language-bash">my_variable=my_value
+my_variable='hello world' # single quotes are not interpreted
+my_variable=&quot;hello $name&quot; # double quotes allow substitution
+my_dir=/home/dev
+variable=$( my_command ) # save output of command into a variable
+timestamp=$(date +&quot;%Y-%m-%d_%H:%M:%S&quot;)
 
-create type Color as enum ('red', 'green', 'blue');
-</code></pre>
-<h3><a class="header" href="#insert" id="insert">Insert</a></h3>
-<pre><code class="language-sql">insert into table_name (id, first_name)
-values (1, 'Peter'),
-       (2, 'Anna');
-</code></pre>
-<h3><a class="header" href="#update" id="update">Update</a></h3>
-<pre><code class="language-sql">update table_name t
-set first_name = u.first_name
-from (values (1, 'Pete'),
-             (2, 'Anne')
-     ) u(id, first_name)
-where u.id = t.id;
-</code></pre>
-<h3><a class="header" href="#delete" id="delete">Delete</a></h3>
-<pre><code class="language-sql">delete
-from table_name
-where id = 1;
-</code></pre>
-<h3><a class="header" href="#read" id="read">Read</a></h3>
-<pre><code class="language-sql">select * from table_name;
-</code></pre>
-<h3><a class="header" href="#alter" id="alter">Alter</a></h3>
-<pre><code class="language-sql">alter table table_name
-    add column last_name varchar not null;
+$my_dir 
+${my_dir} # variable expansion
+${#my_string} # string length
+${my_var=default_value}
+${my_var1?my_var2} # use my_var2 if my_var1 is null
 
-alter table table_name
-    drop column first_name;
+a{d,c,b}e # brace expansion: &quot;ade ace abe&quot;
 
-alter table table_name
-    alter column first_name drop not null;
+# environment variable (export to all child processes created from that shell)
+export my_var1=&quot;${my_var2}&quot; 
 
-alter table table_name
-    alter column first_name set not null;
+# positional parameters
+$0 # name of the script
+$1 - $9 # first 9 arguments of the script
+$# # number of arguments passed to the script
+$? # the exit status of the most recently run process
+$$ # the process ID of the current script
+$USER # the username of the user running the script
+$HOSTNAME # the hostname of the machine the script is running on
+$SECONDS # the number of seconds since the script was started
+$RANDOM # return a random number
+$LINENO # returns the current line number in the script
+</code></pre>
+<h3><a class="header" href="#control-flow" id="control-flow">Control flow</a></h3>
+<pre><code class="language-bash"># arithmetic operators inside [[ ]]: 
+-eq, -ne, -lt, -gt, -le, -ge
+
+# arithmetic operators inside (( )):
+==, !=, &lt;, &gt;, &lt;=, &gt;=
+
+# if-else
+if (( $a &lt; $b )); then
+    # statement
+elif (( $a == $b )); then
+    # statement
+else 
+    # statement
+    exit 0
+fi
+
+
 </code></pre>
 
                     </main>
@@ -217,15 +234,11 @@ alter table table_name
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
                         
-                            <a rel="prev" href="09_dart.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                            <a rel="prev" href="12_html.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
                             </a>
                         
 
-                        
-                            <a rel="next" href="11_markdown.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
-                                <i class="fa fa-angle-right"></i>
-                            </a>
                         
 
                         <div style="clear: both"></div>
@@ -235,15 +248,11 @@ alter table table_name
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
                 
-                    <a rel="prev" href="09_dart.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <a rel="prev" href="12_html.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
                 
 
-                
-                    <a rel="next" href="11_markdown.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
-                        <i class="fa fa-angle-right"></i>
-                    </a>
                 
             </nav>
 

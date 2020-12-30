@@ -95,7 +95,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><a href="01_python.html">Python</a></li><li class="chapter-item expanded affix "><a href="02_typescript.html">Typescript</a></li><li class="chapter-item expanded affix "><a href="03_rust.html">Rust</a></li><li class="chapter-item expanded affix "><a href="04_go.html">Go</a></li><li class="chapter-item expanded affix "><a href="05_java.html">Java</a></li><li class="chapter-item expanded affix "><a href="06_c.html">C</a></li><li class="chapter-item expanded affix "><a href="07_cpp.html">C++</a></li><li class="chapter-item expanded affix "><a href="08_scheme.html">Scheme</a></li><li class="chapter-item expanded affix "><a href="09_dart.html">Dart</a></li><li class="chapter-item expanded affix "><a href="10_postgres.html">Postgres</a></li><li class="chapter-item expanded affix "><a href="11_markdown.html">Markdown</a></li><li class="chapter-item expanded affix "><a href="12_html.html">HTML</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="01_python.html">Python</a></li><li class="chapter-item expanded affix "><a href="02_typescript.html">Typescript</a></li><li class="chapter-item expanded affix "><a href="03_rust.html">Rust</a></li><li class="chapter-item expanded affix "><a href="04_go.html">Go</a></li><li class="chapter-item expanded affix "><a href="05_java.html">Java</a></li><li class="chapter-item expanded affix "><a href="06_c.html">C</a></li><li class="chapter-item expanded affix "><a href="07_cpp.html">C++</a></li><li class="chapter-item expanded affix "><a href="08_scheme.html">Scheme</a></li><li class="chapter-item expanded affix "><a href="09_dart.html">Dart</a></li><li class="chapter-item expanded affix "><a href="10_postgres.html">Postgres</a></li><li class="chapter-item expanded affix "><a href="11_markdown.html">Markdown</a></li><li class="chapter-item expanded affix "><a href="12_html.html">HTML</a></li><li class="chapter-item expanded affix "><a href="13_bash.html">bash</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -1829,6 +1829,75 @@ Cell 1 | Cell 2
 &lt;input&gt;                 &lt;!-- Specifies an input field --&gt;
 &lt;textarea&gt;&lt;/textarea&gt;   &lt;!-- Defines a multi-line text input --&gt;
 &lt;label&gt;&lt;/label&gt;         &lt;!-- Defines a label for a &lt;button&gt;, &lt;input&gt;, &lt;meter&gt;, &lt;output&gt;, &lt;progress&gt;, &lt;select&gt; or &lt;textarea&gt; --&gt;
+</code></pre>
+<h1><a class="header" href="#bash" id="bash">Bash</a></h1>
+<ul>
+<li><a href="13_bash.html#shebang">Shebang</a></li>
+<li><a href="13_bash.html#print">Print</a></li>
+<li><a href="13_bash.html#input">Input</a></li>
+<li><a href="13_bash.html#variables">Variables</a></li>
+<li><a href="13_bash.html#control-flow">Control flow</a></li>
+</ul>
+<h3><a class="header" href="#shebang" id="shebang">Shebang</a></h3>
+<pre><code class="language-bash">#!/bin/bash
+</code></pre>
+<h3><a class="header" href="#print-9" id="print-9">Print</a></h3>
+<pre><code class="language-bash">echo $MY_VAR
+</code></pre>
+<h3><a class="header" href="#input" id="input">Input</a></h3>
+<pre><code class="language-bash">echo -e &quot;Please enter your name: &quot;
+read name
+echo &quot;Nice to meet you $name&quot;
+</code></pre>
+<h3><a class="header" href="#variables-9" id="variables-9">Variables</a></h3>
+<pre><code class="language-bash">my_variable=my_value
+my_variable='hello world' # single quotes are not interpreted
+my_variable=&quot;hello $name&quot; # double quotes allow substitution
+my_dir=/home/dev
+variable=$( my_command ) # save output of command into a variable
+timestamp=$(date +&quot;%Y-%m-%d_%H:%M:%S&quot;)
+
+$my_dir 
+${my_dir} # variable expansion
+${#my_string} # string length
+${my_var=default_value}
+${my_var1?my_var2} # use my_var2 if my_var1 is null
+
+a{d,c,b}e # brace expansion: &quot;ade ace abe&quot;
+
+# environment variable (export to all child processes created from that shell)
+export my_var1=&quot;${my_var2}&quot; 
+
+# positional parameters
+$0 # name of the script
+$1 - $9 # first 9 arguments of the script
+$# # number of arguments passed to the script
+$? # the exit status of the most recently run process
+$$ # the process ID of the current script
+$USER # the username of the user running the script
+$HOSTNAME # the hostname of the machine the script is running on
+$SECONDS # the number of seconds since the script was started
+$RANDOM # return a random number
+$LINENO # returns the current line number in the script
+</code></pre>
+<h3><a class="header" href="#control-flow-7" id="control-flow-7">Control flow</a></h3>
+<pre><code class="language-bash"># arithmetic operators inside [[ ]]: 
+-eq, -ne, -lt, -gt, -le, -ge
+
+# arithmetic operators inside (( )):
+==, !=, &lt;, &gt;, &lt;=, &gt;=
+
+# if-else
+if (( $a &lt; $b )); then
+    # statement
+elif (( $a == $b )); then
+    # statement
+else 
+    # statement
+    exit 0
+fi
+
+
 </code></pre>
 
                     </main>
