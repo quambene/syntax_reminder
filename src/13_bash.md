@@ -5,7 +5,6 @@
 - [Input](#input)
 - [Variables](#variables)
 - [Control flow](#control-flow)
-- [Error handling](#error-handling)
 
 ### Shebang
 
