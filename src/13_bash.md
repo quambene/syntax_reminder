@@ -15,7 +15,10 @@
 ### Print
 
 ```bash
-echo $MY_VAR
+$name="world"
+echo "hello $name"
+
+printf "hello %s \n" world
 ```
 
 ### Input
