@@ -1836,13 +1836,19 @@ Cell 1 | Cell 2
 <li><a href="13_bash.html#print">Print</a></li>
 <li><a href="13_bash.html#input">Input</a></li>
 <li><a href="13_bash.html#variables">Variables</a></li>
+<li><a href="13_bash.html#commands">Commands</a></li>
+<li><a href="13_bash.html#functions">Functions</a></li>
 <li><a href="13_bash.html#control-flow">Control flow</a></li>
+<li><a href="13_bash.html#error-handling">Error handling</a></li>
 </ul>
 <h3><a class="header" href="#shebang" id="shebang">Shebang</a></h3>
 <pre><code class="language-bash">#!/bin/bash
 </code></pre>
 <h3><a class="header" href="#print-9" id="print-9">Print</a></h3>
-<pre><code class="language-bash">echo $MY_VAR
+<pre><code class="language-bash">$name=&quot;world&quot;
+echo &quot;hello $name&quot;
+
+printf &quot;hello %s \n&quot; world
 </code></pre>
 <h3><a class="header" href="#input" id="input">Input</a></h3>
 <pre><code class="language-bash">echo -e &quot;Please enter your name: &quot;
@@ -1850,7 +1856,9 @@ read name
 echo &quot;Nice to meet you $name&quot;
 </code></pre>
 <h3><a class="header" href="#variables-9" id="variables-9">Variables</a></h3>
-<pre><code class="language-bash">my_variable=my_value
+<pre><code class="language-bash"># Use letters, numbers and underscores for variable names
+
+my_variable=my_value
 my_variable='hello world' # single quotes are not interpreted
 my_variable=&quot;hello $name&quot; # double quotes allow substitution
 my_dir=/home/dev
@@ -1880,6 +1888,31 @@ $SECONDS # the number of seconds since the script was started
 $RANDOM # return a random number
 $LINENO # returns the current line number in the script
 </code></pre>
+<h3><a class="header" href="#commands" id="commands">Commands</a></h3>
+<pre><code class="language-bash"># command2 is executed if, and only if, command1 returns an exit status of zero
+command1 &amp;&amp; command2
+
+# command2 is executed if and only if command1 returns a non-zero exit status
+ command1 || command2
+
+# If the value of the expression is non-zero, the return status is 0; otherwise the return status is 1
+(( expression ))
+
+# Return a status of 0 or 1 depending on the evaluation of the conditional expression
+# Word splitting and pathname expansion are not performed
+[[ expression ]]
+</code></pre>
+<h3><a class="header" href="#functions-8" id="functions-8">Functions</a></h3>
+<pre><code class="language-bash">my_function () {
+    # commands
+
+    # optional return status
+    return my_return_status
+}
+
+# call function
+my_function my_arg1 my_arg2
+</code></pre>
 <h3><a class="header" href="#control-flow-7" id="control-flow-7">Control flow</a></h3>
 <pre><code class="language-bash"># arithmetic operators inside [[ ]]: 
 -eq, -ne, -lt, -gt, -le, -ge
@@ -1896,8 +1929,11 @@ else
     # statement
     exit 0
 fi
-
-
+</code></pre>
+<h3><a class="header" href="#error-handling-6" id="error-handling-6">Error handling</a></h3>
+<pre><code class="language-bash">exit N
+# N = 0: executed successfully
+# N != 0: error occured
 </code></pre>
 
                     </main>
