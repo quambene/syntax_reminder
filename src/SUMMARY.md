@@ -12,3 +12,4 @@
 [Postgres](./10_postgres.md)
 [Markdown](./11_markdown.md)
 [HTML](./12_html.md)
+[bash](./13_bash.md)
