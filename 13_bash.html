@@ -232,11 +232,16 @@ command1 &amp;&amp; command2
 [[ expression ]]
 </code></pre>
 <h3><a class="header" href="#functions" id="functions">Functions</a></h3>
-<pre><code class="language-bash">my_function () {
+<pre><code class="language-bash">function my_function {
     # commands
 
     # optional return status
     return my_return_status
+}
+
+# alternative syntax
+my_function () {
+    # commands
 }
 
 # call function
