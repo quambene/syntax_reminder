@@ -88,11 +88,16 @@ command1 && command2
 ### Functions
 
 ```bash
-my_function () {
+function my_function {
     # commands
 
     # optional return status
     return my_return_status
+}
+
+# alternative syntax
+my_function () {
+    # commands
 }
 
 # call function
