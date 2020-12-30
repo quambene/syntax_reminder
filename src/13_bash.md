@@ -4,7 +4,10 @@
 - [Print](#print)
 - [Input](#input)
 - [Variables](#variables)
+- [Commands](#commands)
+- [Functions](#functions)
 - [Control flow](#control-flow)
+- [Error handling](#error-handling)
 
 ### Shebang
 
@@ -32,6 +35,8 @@ echo "Nice to meet you $name"
 ### Variables
 
 ```bash
+# Use letters, numbers and underscores for variable names
+
 my_variable=my_value
 my_variable='hello world' # single quotes are not interpreted
 my_variable="hello $name" # double quotes allow substitution
@@ -63,6 +68,37 @@ $RANDOM # return a random number
 $LINENO # returns the current line number in the script
 ```
 
+### Commands
+
+```bash
+# command2 is executed if, and only if, command1 returns an exit status of zero
+command1 && command2
+
+# command2 is executed if and only if command1 returns a non-zero exit status
+ command1 || command2
+
+# If the value of the expression is non-zero, the return status is 0; otherwise the return status is 1
+(( expression ))
+
+# Return a status of 0 or 1 depending on the evaluation of the conditional expression
+# Word splitting and pathname expansion are not performed
+[[ expression ]]
+```
+
+### Functions
+
+```bash
+my_function () {
+    # commands
+
+    # optional return status
+    return my_return_status
+}
+
+# call function
+my_function my_arg1 my_arg2
+```
+
 ### Control flow
 
 ```bash
@@ -81,6 +117,12 @@ else
     # statement
     exit 0
 fi
+```
 
+### Error handling
 
+```bash
+exit N
+# N = 0: executed successfully
+# N != 0: error occured
 ```
