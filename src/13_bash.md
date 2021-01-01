@@ -74,10 +74,16 @@ $LINENO # returns the current line number in the script
 ### Commands
 
 ```bash
-# command2 is executed if, and only if, command1 returns an exit status of zero
+# commands separated by ";" are executed sequentially
+command1; command2; command3
+
+# commands separated by "&" are executed in parallel (and in background)
+command2 & command2 & command3
+
+# command2 is executed iff command1 returns an exit status of zero
 command1 && command2
 
-# command2 is executed if and only if command1 returns a non-zero exit status
+# command2 is executed iff command1 returns a non-zero exit status
  command1 || command2
 
 # If the value of the expression is non-zero, the return status is 0; otherwise the return status is 1
