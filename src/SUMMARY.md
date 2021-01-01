@@ -1,5 +1,7 @@
 # Summary
 
+# Syntax reminder
+
 [Python](./01_python.md)
 [Typescript](./02_typescript.md)
 [Rust](./03_rust.md)
