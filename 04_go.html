@@ -3,10 +3,8 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title></title>
+        <title>Go - quambene&#x27;s blog</title>
         
-        
-        <base href="/">
         
 
 
@@ -95,7 +93,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><li class="part-title">Syntax reminder</li><li class="chapter-item expanded "><a href="01_python.html"><strong aria-hidden="true">1.</strong> Python</a></li><li class="chapter-item expanded "><a href="02_typescript.html"><strong aria-hidden="true">2.</strong> Typescript</a></li><li class="chapter-item expanded "><a href="03_rust.html"><strong aria-hidden="true">3.</strong> Rust</a></li><li class="chapter-item expanded "><a href="04_go.html"><strong aria-hidden="true">4.</strong> Go</a></li><li class="chapter-item expanded "><a href="05_java.html"><strong aria-hidden="true">5.</strong> Java</a></li><li class="chapter-item expanded "><a href="06_c.html"><strong aria-hidden="true">6.</strong> C</a></li><li class="chapter-item expanded "><a href="07_cpp.html"><strong aria-hidden="true">7.</strong> C++</a></li><li class="chapter-item expanded "><a href="08_scheme.html"><strong aria-hidden="true">8.</strong> Scheme</a></li><li class="chapter-item expanded "><a href="09_dart.html"><strong aria-hidden="true">9.</strong> Dart</a></li><li class="chapter-item expanded "><a href="10_postgres.html"><strong aria-hidden="true">10.</strong> Postgres</a></li><li class="chapter-item expanded "><a href="11_markdown.html"><strong aria-hidden="true">11.</strong> Markdown</a></li><li class="chapter-item expanded "><a href="12_html.html"><strong aria-hidden="true">12.</strong> HTML</a></li><li class="chapter-item expanded "><a href="13_bash.html"><strong aria-hidden="true">13.</strong> Bash</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded affix "><li class="part-title">Syntax reminder</li><li class="chapter-item expanded "><a href="01_python.html"><strong aria-hidden="true">1.</strong> Python</a></li><li class="chapter-item expanded "><a href="02_typescript.html"><strong aria-hidden="true">2.</strong> Typescript</a></li><li class="chapter-item expanded "><a href="03_rust.html"><strong aria-hidden="true">3.</strong> Rust</a></li><li class="chapter-item expanded "><a href="04_go.html" class="active"><strong aria-hidden="true">4.</strong> Go</a></li><li class="chapter-item expanded "><a href="05_java.html"><strong aria-hidden="true">5.</strong> Java</a></li><li class="chapter-item expanded "><a href="06_c.html"><strong aria-hidden="true">6.</strong> C</a></li><li class="chapter-item expanded "><a href="07_cpp.html"><strong aria-hidden="true">7.</strong> C++</a></li><li class="chapter-item expanded "><a href="08_scheme.html"><strong aria-hidden="true">8.</strong> Scheme</a></li><li class="chapter-item expanded "><a href="09_dart.html"><strong aria-hidden="true">9.</strong> Dart</a></li><li class="chapter-item expanded "><a href="10_postgres.html"><strong aria-hidden="true">10.</strong> Postgres</a></li><li class="chapter-item expanded "><a href="11_markdown.html"><strong aria-hidden="true">11.</strong> Markdown</a></li><li class="chapter-item expanded "><a href="12_html.html"><strong aria-hidden="true">12.</strong> HTML</a></li><li class="chapter-item expanded "><a href="13_bash.html"><strong aria-hidden="true">13.</strong> Bash</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -161,15 +159,173 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1><a class="header" href="#document-not-found-404" id="document-not-found-404">Document not found (404)</a></h1>
-<p>This URL is invalid, sorry. Please use the navigation bar or search to continue.</p>
+                        <h1><a class="header" href="#go" id="go">Go</a></h1>
+<ul>
+<li><a href="#print">Print</a></li>
+<li><a href="#variables">Variables</a></li>
+<li><a href="#data-types">Data types</a></li>
+<li><a href="#control-flow">Control flow</a></li>
+<li><a href="#functions">Functions</a></li>
+<li><a href="#interfaces">Interfaces</a></li>
+<li><a href="#error-handling">Error handling</a></li>
+<li><a href="#concurrency">Concurrency</a></li>
+</ul>
+<h3><a class="header" href="#print" id="print">Print</a></h3>
+<pre><code class="language-go">fmt.Println(&quot;Hello World&quot;)
+fmt.Println(&quot;1+1 =&quot;, 1+1)
+</code></pre>
+<h3><a class="header" href="#variables" id="variables">Variables</a></h3>
+<pre><code class="language-go">var x int // declared variables are zero-valued
+var x int = 4 // declare and initialize
+x := 4 // shorthand for declare and initialize
+const s string = &quot;constant&quot;
+var x *int // pointer
+*x = 4 // dereference
+&amp;x // address of pointer
+</code></pre>
+<h3><a class="header" href="#data-types" id="data-types">Data types</a></h3>
+<pre><code class="language-go">// Basic types
+var x int
+var x int64
+var x float32
+var x float64
+var x string
+
+// Array
+arr := [3]int{1, 2, 3}
+
+// Slice
+my_slice := make([]int, 3)
+my_slice = append(my_slice, 1)
+
+// Map (hash map)
+my_map := make(map[string]string)
+my_map[&quot;key1&quot;] = &quot;value1&quot;
+
+// Struct
+type user struct {
+    username string
+    email string
+}
+
+// Initialize struct
+u := user{username: &quot;Alice&quot;, email: &quot;alice@example.com&quot;}
+u.username
+</code></pre>
+<h3><a class="header" href="#control-flow" id="control-flow">Control flow</a></h3>
+<pre><code class="language-go">// for loop
+for i := 1; i &lt;= 3; i++ {
+    fmt.Println(i)
+}
+
+// if-else
+if a &lt; b {
+    // statement
+} else if a == b {
+    // statement
+} else {
+    // statement
+}
+
+// switch
+i := 2
+switch i {
+case 1:
+    // statement
+case 2:
+    // statement
+case 3:
+    // statement
+default:
+    // statement
+}
+</code></pre>
+<h3><a class="header" href="#functions" id="functions">Functions</a></h3>
+<pre><code class="language-go">func myFunction(a int, b int) (int, int) {
+    return a, b
+}
+
+// Variadic function (any number of arguments)
+func myFunction(nums ...int) {
+    // ...
+}
+
+// Closure (lambda expression)
+func myFunction() func() int {
+    i := x
+    return func() int {
+        i++
+        return i
+    }
+}
+
+// Recursive function
+func factorial(n int) int {
+    if n == 0 {
+        return 1
+    }
+    return n * factorial(n-1)
+}
+
+// Methods (on structs)
+func (s myStruct) myFunction() {
+    // ...
+}
+</code></pre>
+<h3><a class="header" href="#interfaces" id="interfaces">Interfaces</a></h3>
+<pre><code class="language-go">type myInterface interface {
+    myMethod1() int
+    myMethod2() int
+}
+
+// Implementation of interface
+func (s myStruct) myMethod1 int {
+    // ...
+}
+
+func (s myStruct) myMethod2 int {
+    // ...
+}
+
+</code></pre>
+<h3><a class="header" href="#error-handling" id="error-handling">Error handling</a></h3>
+<pre><code class="language-go">func myFunction(arg int) (int, error) {
+    if arg == 0 {
+        return -1, errors.New(&quot;error message&quot;)
+    }
+
+    return arg, nil
+}
+</code></pre>
+<h3><a class="header" href="#concurrency" id="concurrency">Concurrency</a></h3>
+<pre><code class="language-go">// Goroutines: Run functions asynchronously
+func main() {
+
+    go myFunction1()
+
+    go myFunction2()
+}
+
+// Channels: Synchronize goroutines
+myChannel := make(chan string)
+go func() { myChannel &lt;- &quot;ping&quot; }() // Send value into channel
+msg := &lt;-myChannel // Receive value from channel
+</code></pre>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
                         
+                            <a rel="prev" href="03_rust.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
 
+                        
+                            <a rel="next" href="05_java.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
                         
 
                         <div style="clear: both"></div>
@@ -179,7 +335,15 @@
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
                 
+                    <a rel="prev" href="03_rust.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
 
+                
+                    <a rel="next" href="05_java.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
                 
             </nav>
 

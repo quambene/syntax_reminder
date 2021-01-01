@@ -3,10 +3,8 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title></title>
+        <title>Postgres - quambene&#x27;s blog</title>
         
-        
-        <base href="/">
         
 
 
@@ -95,7 +93,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><li class="part-title">Syntax reminder</li><li class="chapter-item expanded "><a href="01_python.html"><strong aria-hidden="true">1.</strong> Python</a></li><li class="chapter-item expanded "><a href="02_typescript.html"><strong aria-hidden="true">2.</strong> Typescript</a></li><li class="chapter-item expanded "><a href="03_rust.html"><strong aria-hidden="true">3.</strong> Rust</a></li><li class="chapter-item expanded "><a href="04_go.html"><strong aria-hidden="true">4.</strong> Go</a></li><li class="chapter-item expanded "><a href="05_java.html"><strong aria-hidden="true">5.</strong> Java</a></li><li class="chapter-item expanded "><a href="06_c.html"><strong aria-hidden="true">6.</strong> C</a></li><li class="chapter-item expanded "><a href="07_cpp.html"><strong aria-hidden="true">7.</strong> C++</a></li><li class="chapter-item expanded "><a href="08_scheme.html"><strong aria-hidden="true">8.</strong> Scheme</a></li><li class="chapter-item expanded "><a href="09_dart.html"><strong aria-hidden="true">9.</strong> Dart</a></li><li class="chapter-item expanded "><a href="10_postgres.html"><strong aria-hidden="true">10.</strong> Postgres</a></li><li class="chapter-item expanded "><a href="11_markdown.html"><strong aria-hidden="true">11.</strong> Markdown</a></li><li class="chapter-item expanded "><a href="12_html.html"><strong aria-hidden="true">12.</strong> HTML</a></li><li class="chapter-item expanded "><a href="13_bash.html"><strong aria-hidden="true">13.</strong> Bash</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded affix "><li class="part-title">Syntax reminder</li><li class="chapter-item expanded "><a href="01_python.html"><strong aria-hidden="true">1.</strong> Python</a></li><li class="chapter-item expanded "><a href="02_typescript.html"><strong aria-hidden="true">2.</strong> Typescript</a></li><li class="chapter-item expanded "><a href="03_rust.html"><strong aria-hidden="true">3.</strong> Rust</a></li><li class="chapter-item expanded "><a href="04_go.html"><strong aria-hidden="true">4.</strong> Go</a></li><li class="chapter-item expanded "><a href="05_java.html"><strong aria-hidden="true">5.</strong> Java</a></li><li class="chapter-item expanded "><a href="06_c.html"><strong aria-hidden="true">6.</strong> C</a></li><li class="chapter-item expanded "><a href="07_cpp.html"><strong aria-hidden="true">7.</strong> C++</a></li><li class="chapter-item expanded "><a href="08_scheme.html"><strong aria-hidden="true">8.</strong> Scheme</a></li><li class="chapter-item expanded "><a href="09_dart.html"><strong aria-hidden="true">9.</strong> Dart</a></li><li class="chapter-item expanded "><a href="10_postgres.html" class="active"><strong aria-hidden="true">10.</strong> Postgres</a></li><li class="chapter-item expanded "><a href="11_markdown.html"><strong aria-hidden="true">11.</strong> Markdown</a></li><li class="chapter-item expanded "><a href="12_html.html"><strong aria-hidden="true">12.</strong> HTML</a></li><li class="chapter-item expanded "><a href="13_bash.html"><strong aria-hidden="true">13.</strong> Bash</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -161,15 +159,73 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1><a class="header" href="#document-not-found-404" id="document-not-found-404">Document not found (404)</a></h1>
-<p>This URL is invalid, sorry. Please use the navigation bar or search to continue.</p>
+                        <h1><a class="header" href="#postgres" id="postgres">Postgres</a></h1>
+<ul>
+<li><a href="#create">Create</a></li>
+<li><a href="#insert">Insert</a></li>
+<li><a href="#update">Update</a></li>
+<li><a href="#delete">Delete</a></li>
+<li><a href="#read">Read</a></li>
+<li><a href="#alter">Alter</a></li>
+</ul>
+<h3><a class="header" href="#create" id="create">Create</a></h3>
+<pre><code class="language-sql">create table if not exists table_name
+(
+    id         serial primary key,
+    first_name varchar not null
+);
+
+create type Color as enum ('red', 'green', 'blue');
+</code></pre>
+<h3><a class="header" href="#insert" id="insert">Insert</a></h3>
+<pre><code class="language-sql">insert into table_name (id, first_name)
+values (1, 'Peter'),
+       (2, 'Anna');
+</code></pre>
+<h3><a class="header" href="#update" id="update">Update</a></h3>
+<pre><code class="language-sql">update table_name t
+set first_name = u.first_name
+from (values (1, 'Pete'),
+             (2, 'Anne')
+     ) u(id, first_name)
+where u.id = t.id;
+</code></pre>
+<h3><a class="header" href="#delete" id="delete">Delete</a></h3>
+<pre><code class="language-sql">delete
+from table_name
+where id = 1;
+</code></pre>
+<h3><a class="header" href="#read" id="read">Read</a></h3>
+<pre><code class="language-sql">select * from table_name;
+</code></pre>
+<h3><a class="header" href="#alter" id="alter">Alter</a></h3>
+<pre><code class="language-sql">alter table table_name
+    add column last_name varchar not null;
+
+alter table table_name
+    drop column first_name;
+
+alter table table_name
+    alter column first_name drop not null;
+
+alter table table_name
+    alter column first_name set not null;
+</code></pre>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
                         
+                            <a rel="prev" href="09_dart.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
 
+                        
+                            <a rel="next" href="11_markdown.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
                         
 
                         <div style="clear: both"></div>
@@ -179,7 +235,15 @@
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
                 
+                    <a rel="prev" href="09_dart.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
 
+                
+                    <a rel="next" href="11_markdown.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
                 
             </nav>
 
