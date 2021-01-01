@@ -13,6 +13,9 @@
 
 ```bash
 #!/bin/bash
+
+# alternative:
+#!/usr/bin/env bash
 ```
 
 ### Print
