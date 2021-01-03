@@ -129,7 +129,6 @@ elif (( $a == $b )); then
     # statement
 else 
     # statement
-    exit 0
 fi
 ```
 
