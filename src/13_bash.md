@@ -130,6 +130,12 @@ elif (( $a == $b )); then
 else 
     # statement
 fi
+
+# for loop
+for i in {1..3}
+do
+    # statement
+done
 ```
 
 ### Error handling
