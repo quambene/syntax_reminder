@@ -97,7 +97,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><li class="part-title">Syntax reminder</li><li class="chapter-item expanded "><a href="01_python.html"><strong aria-hidden="true">1.</strong> Python</a></li><li class="chapter-item expanded "><a href="02_typescript.html"><strong aria-hidden="true">2.</strong> Typescript</a></li><li class="chapter-item expanded "><a href="03_rust.html"><strong aria-hidden="true">3.</strong> Rust</a></li><li class="chapter-item expanded "><a href="04_go.html"><strong aria-hidden="true">4.</strong> Go</a></li><li class="chapter-item expanded "><a href="05_java.html"><strong aria-hidden="true">5.</strong> Java</a></li><li class="chapter-item expanded "><a href="06_c.html"><strong aria-hidden="true">6.</strong> C</a></li><li class="chapter-item expanded "><a href="07_cpp.html"><strong aria-hidden="true">7.</strong> C++</a></li><li class="chapter-item expanded "><a href="08_scheme.html"><strong aria-hidden="true">8.</strong> Scheme</a></li><li class="chapter-item expanded "><a href="09_dart.html"><strong aria-hidden="true">9.</strong> Dart</a></li><li class="chapter-item expanded "><a href="10_postgres.html"><strong aria-hidden="true">10.</strong> Postgres</a></li><li class="chapter-item expanded "><a href="11_markdown.html"><strong aria-hidden="true">11.</strong> Markdown</a></li><li class="chapter-item expanded "><a href="12_html.html"><strong aria-hidden="true">12.</strong> HTML</a></li><li class="chapter-item expanded "><a href="13_bash.html"><strong aria-hidden="true">13.</strong> Bash</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded affix "><li class="part-title">Syntax reminder</li><li class="chapter-item expanded "><a href="01_python.html"><strong aria-hidden="true">1.</strong> Python</a></li><li class="chapter-item expanded "><a href="02_typescript.html"><strong aria-hidden="true">2.</strong> Typescript</a></li><li class="chapter-item expanded "><a href="03_rust.html"><strong aria-hidden="true">3.</strong> Rust</a></li><li class="chapter-item expanded "><a href="04_go.html"><strong aria-hidden="true">4.</strong> Go</a></li><li class="chapter-item expanded "><a href="05_java.html"><strong aria-hidden="true">5.</strong> Java</a></li><li class="chapter-item expanded "><a href="06_c.html"><strong aria-hidden="true">6.</strong> C</a></li><li class="chapter-item expanded "><a href="07_cpp.html"><strong aria-hidden="true">7.</strong> C++</a></li><li class="chapter-item expanded "><a href="08_scheme.html"><strong aria-hidden="true">8.</strong> Scheme</a></li><li class="chapter-item expanded "><a href="09_dart.html"><strong aria-hidden="true">9.</strong> Dart</a></li><li class="chapter-item expanded "><a href="10_postgres.html"><strong aria-hidden="true">10.</strong> Postgres</a></li><li class="chapter-item expanded "><a href="11_markdown.html"><strong aria-hidden="true">11.</strong> Markdown</a></li><li class="chapter-item expanded "><a href="12_html.html"><strong aria-hidden="true">12.</strong> HTML</a></li><li class="chapter-item expanded "><a href="13_bash.html"><strong aria-hidden="true">13.</strong> Bash</a></li><li class="chapter-item expanded "><a href="14_css.html"><strong aria-hidden="true">14.</strong> CSS</a></li><li class="chapter-item expanded "><a href="15_vue.html"><strong aria-hidden="true">15.</strong> Vue</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -1957,6 +1957,175 @@ done
 <pre><code class="language-bash">exit N
 # N = 0: executed successfully
 # N != 0: error occured
+</code></pre>
+<h1><a class="header" href="#css" id="css">CSS</a></h1>
+<ul>
+<li><a href="14_css.html#selectors">Selectors</a></li>
+<li><a href="14_css.html#css-function">CSS function</a></li>
+<li><a href="14_css.html#scss">SCSS</a></li>
+<li><a href="14_css.html#flexbox">Flexbox</a></li>
+<li><a href="14_css.html#box-sizing">Box sizing</a></li>
+<li><a href="14_css.html#bem">BEM</a></li>
+</ul>
+<h3><a class="header" href="#selectors" id="selectors">Selectors</a></h3>
+<pre><code class="language-css">p {}
+
+/* Element selector */
+#para1 {}
+
+/* ID selector */
+.center {}
+
+/* Class selector */
+p.center {}
+
+/* Class selector */
+selector:pseudo-class {}
+
+/* Pseudo-class */
+selector::pseudo-element {}
+
+/* Pseudo-element */
+/* Attribute selector */
+a[attribute] {}
+
+a[attribute=&quot;value&quot;] {}
+
+a[attribute~=&quot;value&quot;] {}
+
+a[attribute|=&quot;value&quot;] {}
+
+a[attribute^=&quot;value&quot;] {}
+
+a[attribute$=&quot;value&quot;] {}
+</code></pre>
+<h3><a class="header" href="#css-function" id="css-function">CSS function</a></h3>
+<pre><code class="language-css">/* var() function */
+.text {
+    color: var(--text-color, black);
+}
+</code></pre>
+<h3><a class="header" href="#scss" id="scss">SCSS</a></h3>
+<pre><code class="language-css">/* SCSS variable in function */
+$footer-height: 3.5vh calc(100vh - #{$footer-height})
+</code></pre>
+<h3><a class="header" href="#flexbox" id="flexbox">Flexbox</a></h3>
+<pre><code class="language-css">.flex-column-center {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* center items vertically */
+    align-items: center; /* center items horizontally */
+    height: inherit;
+    border: 1px solid blue;
+}
+
+.flex-column-space-between {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: inherit;
+    border: 1px solid blue;
+}
+
+.flex-row-center {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center; /* center items horizontally */
+    border: 1px solid blue;
+}
+
+.flex-row-baseline {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: baseline; /* align items to baseline */
+    border: 1px solid blue;
+}
+</code></pre>
+<h3><a class="header" href="#box-sizing" id="box-sizing">Box sizing</a></h3>
+<pre><code class="language-css">html {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+    -webkit-box-sizing: inherit;
+    -moz-box-sizing: inherit;
+    box-sizing: inherit;
+}
+</code></pre>
+<h3><a class="header" href="#bem-block-element-modifier-methodology" id="bem-block-element-modifier-methodology">BEM (block, element, modifier) methodology</a></h3>
+<pre><code class="language-css">/* Scoping styles in SCSS */
+.block {
+    @at-root #{&amp;}__element {}
+
+    @at-root #{&amp;}--modifier {}
+}
+
+/* in CSS */
+.block {
+}
+.block__element {
+}
+.block--modifier {
+}
+</code></pre>
+<h1><a class="header" href="#vue" id="vue">Vue</a></h1>
+<ul>
+<li><a href="15_vue.html#template">Template</a></li>
+<li><a href="15_vue.html#directives">Directives</a></li>
+<li><a href="15_vue.html#input-binding">Input binding</a></li>
+<li><a href="15_vue.html#event-handling">Event handling</a></li>
+</ul>
+<h3><a class="header" href="#template" id="template">Template</a></h3>
+<pre><code class="language-html">&lt;div id=&quot;myApp&quot;&gt;  
+    {{ message }}  
+&lt;/div&gt;
+</code></pre>
+<h3><a class="header" href="#directives" id="directives">Directives</a></h3>
+<pre><code class="language-html">&lt;div v-if=&quot;isVisible&quot;&gt;&lt;/div&gt;
+&lt;div v-once&gt;{{ permanent message}}&lt;/div&gt;
+&lt;div v-bind:class=&quot;{ 'is-active': isActive }&quot;&gt;&lt;/div&gt;
+&lt;input v-model=&quot;message&quot;&gt;  &lt;!-- two way data binding --&gt;
+&lt;button v-on:click=&quot;doSomething&quot;&gt;&lt;/button&gt;
+
+ &lt;!-- Dynamic argument --&gt;
+&lt;a v-bind:[attributeName]=&quot;url&quot;&gt;&lt;/a&gt;
+
+ &lt;!-- Modifier --&gt;
+ &lt;form v-on:submit.prevent=&quot;onSubmit&quot;&gt;&lt;/form&gt; &lt;!-- call event.preventDefault() --&gt;
+
+&lt;!-- Shorthand --&gt;
+&lt;div :class=&quot;{ 'is-active': isActive }&quot;&gt;&lt;/div&gt; 
+&lt;button @click=&quot;doSomething&quot;&gt;&lt;/button&gt;
+</code></pre>
+<pre><code class="language-javascript">var app = new Vue({  
+    el: '#app',  
+    data: {  
+        isVisible: true,
+        isActive: false,
+    }  
+})
+</code></pre>
+<h3><a class="header" href="#input-binding" id="input-binding">Input binding</a></h3>
+<pre><code class="language-html">&lt;input v-model=&quot;message&quot; placeholder=&quot;edit me&quot;&gt;
+&lt;p&gt;Message is: {{ message }}&lt;/p&gt;
+</code></pre>
+<h3><a class="header" href="#event-handling" id="event-handling">Event handling</a></h3>
+<pre><code class="language-html">&lt;button v-on:click=&quot;myClickHandler&quot;&gt;Click me!&lt;/button&gt;  
+</code></pre>
+<pre><code class="language-javascript">var app = new Vue({  
+    el: '#app',  
+    methods: {  
+        myClickHandler: (event) =&gt; {  
+            console.log('Button clicked!');  
+        }  
+    }  
+})
 </code></pre>
 
                     </main>

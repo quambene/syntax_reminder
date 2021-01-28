@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>Go - quambene&#x27;s blog</title>
+        <title>Vue - quambene&#x27;s blog</title>
         
         
 
@@ -95,7 +95,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><li class="part-title">Syntax reminder</li><li class="chapter-item expanded "><a href="01_python.html"><strong aria-hidden="true">1.</strong> Python</a></li><li class="chapter-item expanded "><a href="02_typescript.html"><strong aria-hidden="true">2.</strong> Typescript</a></li><li class="chapter-item expanded "><a href="03_rust.html"><strong aria-hidden="true">3.</strong> Rust</a></li><li class="chapter-item expanded "><a href="04_go.html" class="active"><strong aria-hidden="true">4.</strong> Go</a></li><li class="chapter-item expanded "><a href="05_java.html"><strong aria-hidden="true">5.</strong> Java</a></li><li class="chapter-item expanded "><a href="06_c.html"><strong aria-hidden="true">6.</strong> C</a></li><li class="chapter-item expanded "><a href="07_cpp.html"><strong aria-hidden="true">7.</strong> C++</a></li><li class="chapter-item expanded "><a href="08_scheme.html"><strong aria-hidden="true">8.</strong> Scheme</a></li><li class="chapter-item expanded "><a href="09_dart.html"><strong aria-hidden="true">9.</strong> Dart</a></li><li class="chapter-item expanded "><a href="10_postgres.html"><strong aria-hidden="true">10.</strong> Postgres</a></li><li class="chapter-item expanded "><a href="11_markdown.html"><strong aria-hidden="true">11.</strong> Markdown</a></li><li class="chapter-item expanded "><a href="12_html.html"><strong aria-hidden="true">12.</strong> HTML</a></li><li class="chapter-item expanded "><a href="13_bash.html"><strong aria-hidden="true">13.</strong> Bash</a></li><li class="chapter-item expanded "><a href="14_css.html"><strong aria-hidden="true">14.</strong> CSS</a></li><li class="chapter-item expanded "><a href="15_vue.html"><strong aria-hidden="true">15.</strong> Vue</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded affix "><li class="part-title">Syntax reminder</li><li class="chapter-item expanded "><a href="01_python.html"><strong aria-hidden="true">1.</strong> Python</a></li><li class="chapter-item expanded "><a href="02_typescript.html"><strong aria-hidden="true">2.</strong> Typescript</a></li><li class="chapter-item expanded "><a href="03_rust.html"><strong aria-hidden="true">3.</strong> Rust</a></li><li class="chapter-item expanded "><a href="04_go.html"><strong aria-hidden="true">4.</strong> Go</a></li><li class="chapter-item expanded "><a href="05_java.html"><strong aria-hidden="true">5.</strong> Java</a></li><li class="chapter-item expanded "><a href="06_c.html"><strong aria-hidden="true">6.</strong> C</a></li><li class="chapter-item expanded "><a href="07_cpp.html"><strong aria-hidden="true">7.</strong> C++</a></li><li class="chapter-item expanded "><a href="08_scheme.html"><strong aria-hidden="true">8.</strong> Scheme</a></li><li class="chapter-item expanded "><a href="09_dart.html"><strong aria-hidden="true">9.</strong> Dart</a></li><li class="chapter-item expanded "><a href="10_postgres.html"><strong aria-hidden="true">10.</strong> Postgres</a></li><li class="chapter-item expanded "><a href="11_markdown.html"><strong aria-hidden="true">11.</strong> Markdown</a></li><li class="chapter-item expanded "><a href="12_html.html"><strong aria-hidden="true">12.</strong> HTML</a></li><li class="chapter-item expanded "><a href="13_bash.html"><strong aria-hidden="true">13.</strong> Bash</a></li><li class="chapter-item expanded "><a href="14_css.html"><strong aria-hidden="true">14.</strong> CSS</a></li><li class="chapter-item expanded "><a href="15_vue.html" class="active"><strong aria-hidden="true">15.</strong> Vue</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -163,157 +163,58 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1><a class="header" href="#go" id="go">Go</a></h1>
+                        <h1><a class="header" href="#vue" id="vue">Vue</a></h1>
 <ul>
-<li><a href="#print">Print</a></li>
-<li><a href="#variables">Variables</a></li>
-<li><a href="#data-types">Data types</a></li>
-<li><a href="#control-flow">Control flow</a></li>
-<li><a href="#functions">Functions</a></li>
-<li><a href="#interfaces">Interfaces</a></li>
-<li><a href="#error-handling">Error handling</a></li>
-<li><a href="#concurrency">Concurrency</a></li>
+<li><a href="#template">Template</a></li>
+<li><a href="#directives">Directives</a></li>
+<li><a href="#input-binding">Input binding</a></li>
+<li><a href="#event-handling">Event handling</a></li>
 </ul>
-<h3><a class="header" href="#print" id="print">Print</a></h3>
-<pre><code class="language-go">fmt.Println(&quot;Hello World&quot;)
-fmt.Println(&quot;1+1 =&quot;, 1+1)
+<h3><a class="header" href="#template" id="template">Template</a></h3>
+<pre><code class="language-html">&lt;div id=&quot;myApp&quot;&gt;  
+    {{ message }}  
+&lt;/div&gt;
 </code></pre>
-<h3><a class="header" href="#variables" id="variables">Variables</a></h3>
-<pre><code class="language-go">var x int // declared variables are zero-valued
-var x int = 4 // declare and initialize
-x := 4 // shorthand for declare and initialize
-const s string = &quot;constant&quot;
-var x *int // pointer
-*x = 4 // dereference
-&amp;x // address of pointer
+<h3><a class="header" href="#directives" id="directives">Directives</a></h3>
+<pre><code class="language-html">&lt;div v-if=&quot;isVisible&quot;&gt;&lt;/div&gt;
+&lt;div v-once&gt;{{ permanent message}}&lt;/div&gt;
+&lt;div v-bind:class=&quot;{ 'is-active': isActive }&quot;&gt;&lt;/div&gt;
+&lt;input v-model=&quot;message&quot;&gt;  &lt;!-- two way data binding --&gt;
+&lt;button v-on:click=&quot;doSomething&quot;&gt;&lt;/button&gt;
+
+ &lt;!-- Dynamic argument --&gt;
+&lt;a v-bind:[attributeName]=&quot;url&quot;&gt;&lt;/a&gt;
+
+ &lt;!-- Modifier --&gt;
+ &lt;form v-on:submit.prevent=&quot;onSubmit&quot;&gt;&lt;/form&gt; &lt;!-- call event.preventDefault() --&gt;
+
+&lt;!-- Shorthand --&gt;
+&lt;div :class=&quot;{ 'is-active': isActive }&quot;&gt;&lt;/div&gt; 
+&lt;button @click=&quot;doSomething&quot;&gt;&lt;/button&gt;
 </code></pre>
-<h3><a class="header" href="#data-types" id="data-types">Data types</a></h3>
-<pre><code class="language-go">// Basic types
-var x int
-var x int64
-var x float32
-var x float64
-var x string
-
-// Array
-arr := [3]int{1, 2, 3}
-
-// Slice
-my_slice := make([]int, 3)
-my_slice = append(my_slice, 1)
-
-// Map (hash map)
-my_map := make(map[string]string)
-my_map[&quot;key1&quot;] = &quot;value1&quot;
-
-// Struct
-type user struct {
-    username string
-    email string
-}
-
-// Initialize struct
-u := user{username: &quot;Alice&quot;, email: &quot;alice@example.com&quot;}
-u.username
+<pre><code class="language-javascript">var app = new Vue({  
+    el: '#app',  
+    data: {  
+        isVisible: true,
+        isActive: false,
+    }  
+})
 </code></pre>
-<h3><a class="header" href="#control-flow" id="control-flow">Control flow</a></h3>
-<pre><code class="language-go">// for loop
-for i := 1; i &lt;= 3; i++ {
-    fmt.Println(i)
-}
-
-// if-else
-if a &lt; b {
-    // statement
-} else if a == b {
-    // statement
-} else {
-    // statement
-}
-
-// switch
-i := 2
-switch i {
-case 1:
-    // statement
-case 2:
-    // statement
-case 3:
-    // statement
-default:
-    // statement
-}
+<h3><a class="header" href="#input-binding" id="input-binding">Input binding</a></h3>
+<pre><code class="language-html">&lt;input v-model=&quot;message&quot; placeholder=&quot;edit me&quot;&gt;
+&lt;p&gt;Message is: {{ message }}&lt;/p&gt;
 </code></pre>
-<h3><a class="header" href="#functions" id="functions">Functions</a></h3>
-<pre><code class="language-go">func myFunction(a int, b int) (int, int) {
-    return a, b
-}
-
-// Variadic function (any number of arguments)
-func myFunction(nums ...int) {
-    // ...
-}
-
-// Closure (lambda expression)
-func myFunction() func() int {
-    i := x
-    return func() int {
-        i++
-        return i
-    }
-}
-
-// Recursive function
-func factorial(n int) int {
-    if n == 0 {
-        return 1
-    }
-    return n * factorial(n-1)
-}
-
-// Methods (on structs)
-func (s myStruct) myFunction() {
-    // ...
-}
+<h3><a class="header" href="#event-handling" id="event-handling">Event handling</a></h3>
+<pre><code class="language-html">&lt;button v-on:click=&quot;myClickHandler&quot;&gt;Click me!&lt;/button&gt;  
 </code></pre>
-<h3><a class="header" href="#interfaces" id="interfaces">Interfaces</a></h3>
-<pre><code class="language-go">type myInterface interface {
-    myMethod1() int
-    myMethod2() int
-}
-
-// Implementation of interface
-func (s myStruct) myMethod1 int {
-    // ...
-}
-
-func (s myStruct) myMethod2 int {
-    // ...
-}
-
-</code></pre>
-<h3><a class="header" href="#error-handling" id="error-handling">Error handling</a></h3>
-<pre><code class="language-go">func myFunction(arg int) (int, error) {
-    if arg == 0 {
-        return -1, errors.New(&quot;error message&quot;)
-    }
-
-    return arg, nil
-}
-</code></pre>
-<h3><a class="header" href="#concurrency" id="concurrency">Concurrency</a></h3>
-<pre><code class="language-go">// Goroutines: Run functions asynchronously
-func main() {
-
-    go myFunction1()
-
-    go myFunction2()
-}
-
-// Channels: Synchronize goroutines
-myChannel := make(chan string)
-go func() { myChannel &lt;- &quot;ping&quot; }() // Send value into channel
-msg := &lt;-myChannel // Receive value from channel
+<pre><code class="language-javascript">var app = new Vue({  
+    el: '#app',  
+    methods: {  
+        myClickHandler: (event) =&gt; {  
+            console.log('Button clicked!');  
+        }  
+    }  
+})
 </code></pre>
 
                     </main>
@@ -321,15 +222,11 @@ msg := &lt;-myChannel // Receive value from channel
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
                         
-                            <a rel="prev" href="03_rust.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                            <a rel="prev" href="14_css.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
                             </a>
                         
 
-                        
-                            <a rel="next" href="05_java.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
-                                <i class="fa fa-angle-right"></i>
-                            </a>
                         
 
                         <div style="clear: both"></div>
@@ -339,15 +236,11 @@ msg := &lt;-myChannel // Receive value from channel
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
                 
-                    <a rel="prev" href="03_rust.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <a rel="prev" href="14_css.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
                 
 
-                
-                    <a rel="next" href="05_java.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
-                        <i class="fa fa-angle-right"></i>
-                    </a>
                 
             </nav>
 
