@@ -4,6 +4,7 @@
 - [Directives](#directives)
 - [Input binding](#input-binding)
 - [Event handling](#event-handling)
+- [Component](#component)
 
 ### Template
 
@@ -65,4 +66,22 @@ var app = new Vue({
         }  
     }  
 })
+```
+
+### Component
+
+```javascript
+Vue.component('my-component-name', {
+    el: '#app',
+    data: {},
+    props: {}
+    computed: {},
+    methods: {},
+    mounted: function () {},
+    beforeDestroy: function () {},
+})
+```
+
+```html
+<my-component-name />
 ```
