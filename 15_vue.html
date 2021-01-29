@@ -169,6 +169,7 @@
 <li><a href="#directives">Directives</a></li>
 <li><a href="#input-binding">Input binding</a></li>
 <li><a href="#event-handling">Event handling</a></li>
+<li><a href="#component">Component</a></li>
 </ul>
 <h3><a class="header" href="#template" id="template">Template</a></h3>
 <pre><code class="language-html">&lt;div id=&quot;myApp&quot;&gt;  
@@ -215,6 +216,19 @@
         }  
     }  
 })
+</code></pre>
+<h3><a class="header" href="#component" id="component">Component</a></h3>
+<pre><code class="language-javascript">Vue.component('my-component-name', {
+    el: '#app',
+    data: {},
+    props: {}
+    computed: {},
+    methods: {},
+    mounted: function () {},
+    beforeDestroy: function () {},
+})
+</code></pre>
+<pre><code class="language-html">&lt;my-component-name /&gt;
 </code></pre>
 
                     </main>
