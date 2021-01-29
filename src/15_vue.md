@@ -76,7 +76,10 @@ Vue.component('my-component-name', {
     data: {},
     props: {}
     computed: {},
-    methods: {},
+    methods: {
+        // Do not use an arrow function to define a method
+        myMethod: function () {}
+    },
     mounted: function () {},
     beforeDestroy: function () {},
 })
