@@ -27,6 +27,7 @@ let x: number = 4;
 const x: number = 2;
 let x = `Hello ${firstName} ${lastName}`; // template string
 let x = (condition) ? valueIfTrue:valueIfFalse; // conditional operator
+let x = myEntity!.name; // non-null assertion operator
 ```
 
 ### Data types
