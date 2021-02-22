@@ -13,8 +13,8 @@
 - [Modules](#modules)
 - [Crates](#crates)
 - [Packages](#packages)
-- [External packages](#external-packages)
-- [Cargo](#cargo)
+- [External packages](#external-packages-cargo.toml)
+- [Cargo](#cargo-package-manager)
 
 ### Print
 
