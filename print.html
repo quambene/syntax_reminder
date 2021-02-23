@@ -449,6 +449,8 @@ let x: &amp;i32; // reference: refer to some value without taking ownership of i
 *x // dereferencing
 let x: &amp;'a i32; // reference with an explicit lifetime
 let x: &amp;'a mut i32; // mutable reference with an explicit lifetime
+let x: *const i32; // const pointer
+let x: *mut i32; // // mut pointer
 const MYCONST: f32 = 3.14; // immutable value
 static MYSTATIC: &amp;str = &quot;Rust&quot;; // mutable variable with static lifetime
 let r#fn = &quot;name&quot;; // raw identifier for reserved keywords
