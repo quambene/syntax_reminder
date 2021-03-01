@@ -1,11 +1,23 @@
 # Postgres
 
+- [Operators](#operators)
 - [Create](#create)
 - [Insert](#insert)
 - [Update](#update)
 - [Delete](#delete)
 - [Read](#read)
 - [Alter](#alter)
+
+
+### Operators
+
+```sql
+# Comparison operators
+= # equal
+!= # not equal
+is null
+is not null
+```
 
 ### Create
 
