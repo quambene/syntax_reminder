@@ -42,12 +42,19 @@ values (1, 'Peter'),
 ### Update
 
 ```sql
+# Update multiple rows
 update table_name t
 set first_name = u.first_name
 from (values (1, 'Pete'),
              (2, 'Anne')
      ) u(id, first_name)
 where u.id = t.id;
+
+# Update multiple rows
+update table_name t
+set my_value = true
+from (select unnest(array [1, 2, 3])) as u(id)
+where t.id = u.id;
 ```
 
 ### Delete
