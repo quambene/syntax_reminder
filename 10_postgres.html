@@ -195,12 +195,19 @@ values (1, 'Peter'),
        (2, 'Anna');
 </code></pre>
 <h3><a class="header" href="#update" id="update">Update</a></h3>
-<pre><code class="language-sql">update table_name t
+<pre><code class="language-sql"># Update multiple rows
+update table_name t
 set first_name = u.first_name
 from (values (1, 'Pete'),
              (2, 'Anne')
      ) u(id, first_name)
 where u.id = t.id;
+
+# Update multiple rows
+update table_name t
+set my_value = true
+from (select unnest(array [1, 2, 3])) as u(id)
+where t.id = u.id;
 </code></pre>
 <h3><a class="header" href="#delete" id="delete">Delete</a></h3>
 <pre><code class="language-sql">delete
