@@ -136,6 +136,16 @@ for i in {1..3}
 do
     # statement
 done
+
+# directory exists
+if [[ -d $directory ]]; then
+    # statement
+fi
+
+# file exists
+if [[ -f $directory ]]; then
+    # statement
+fi
 ```
 
 ### Error handling
