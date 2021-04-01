@@ -481,15 +481,23 @@ mod my_mod {
     }
 }
 
-// link a crate
-extern crate my_crate;
-
 // absolute path
 use crate::my_crate::my_function(); // referring to an item in the module tree
 
 // relative path
 self::my_function(); // current module scope
 super::my_function(); // parent scope
+
+// external crate
+use std::io;
+
+// renaming external crate
+use futures as f;
+use self::f::Future;
+
+// submodules
+foo.rs // module
+foo/bar.rs // submodule
 <span class="boring">}
 </span></code></pre></pre>
 <h3><a class="header" href="#crates" id="crates">Crates</a></h3>
