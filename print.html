@@ -472,6 +472,8 @@ let x: String; // owned string type
 let x: &amp;'static str; // string with static lifetime
 let x: bool;
 let x: char = 'ℤ'; // unicode character
+let x: &amp;[T]; // slice
+let x: &amp;mut [T]; // mutable slice
 
 // Array
 let arr: [i32; 5] = [1, 2, 3, 4, 5];
@@ -489,11 +491,16 @@ let first_vec = vec.get(0);
 let first_vec = &amp;vec[0];
 vec.push(4);
 
+// Slice
+// view into a vector, cannot grow
+let s = &amp;my_arr[1..3]
+let s = &amp;my_vec[1..3]
+
 // Hash map
 let mut my_hashmap = HashMap::new();
 my_hashmap.insert(String::from(&quot;Key1&quot;), String::from(&quot;Value1&quot;));
 
-// Enum (similar to algebraic data types in functional languages)
+// Enum
 enum Option&lt;T&gt; {
     Some(T),
     None,
