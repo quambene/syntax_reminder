@@ -1939,7 +1939,10 @@ command2 &amp; command2 &amp; command3
 command1 &amp;&amp; command2
 
 # command2 is executed iff command1 returns a non-zero exit status
- command1 || command2
+command1 || command2
+
+# execute in subshell
+( cd directory &amp;&amp; command1 )
 
 # If the value of the expression is non-zero, the return status is 0; otherwise the return status is 1
 (( expression ))
@@ -1995,6 +1998,21 @@ fi
 if [[ -f $directory ]]; then
     # statement
 fi
+
+# case
+read -p &quot;Continue (yes or no)?&quot; choice
+case &quot;$choice&quot; in 
+  yes ) 
+    # statements
+    ;;
+  no )
+    # statements
+    ;;
+  * ) 
+    # statements
+    ;;
+esac
+
 </code></pre>
 <h3><a class="header" href="#error-handling-6" id="error-handling-6">Error handling</a></h3>
 <pre><code class="language-bash">exit N
