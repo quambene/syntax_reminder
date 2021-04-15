@@ -84,7 +84,10 @@ command2 & command2 & command3
 command1 && command2
 
 # command2 is executed iff command1 returns a non-zero exit status
- command1 || command2
+command1 || command2
+
+# execute in subshell
+( cd directory && command1 )
 
 # If the value of the expression is non-zero, the return status is 0; otherwise the return status is 1
 (( expression ))
@@ -146,6 +149,21 @@ fi
 if [[ -f $directory ]]; then
     # statement
 fi
+
+# case
+read -p "Continue (yes or no)?" choice
+case "$choice" in 
+  yes ) 
+    # statements
+    ;;
+  no )
+    # statements
+    ;;
+  * ) 
+    # statements
+    ;;
+esac
+
 ```
 
 ### Error handling
