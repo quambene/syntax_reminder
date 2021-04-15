@@ -163,7 +163,6 @@ case "$choice" in
     # statements
     ;;
 esac
-
 ```
 
 ### Error handling
