@@ -97,7 +97,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><li class="part-title">Syntax reminder</li><li class="chapter-item expanded "><a href="01_python.html"><strong aria-hidden="true">1.</strong> Python</a></li><li class="chapter-item expanded "><a href="02_typescript.html"><strong aria-hidden="true">2.</strong> Typescript</a></li><li class="chapter-item expanded "><a href="03_rust.html"><strong aria-hidden="true">3.</strong> Rust</a></li><li class="chapter-item expanded "><a href="04_go.html"><strong aria-hidden="true">4.</strong> Go</a></li><li class="chapter-item expanded "><a href="05_java.html"><strong aria-hidden="true">5.</strong> Java</a></li><li class="chapter-item expanded "><a href="06_c.html"><strong aria-hidden="true">6.</strong> C</a></li><li class="chapter-item expanded "><a href="07_cpp.html"><strong aria-hidden="true">7.</strong> C++</a></li><li class="chapter-item expanded "><a href="08_scheme.html"><strong aria-hidden="true">8.</strong> Scheme</a></li><li class="chapter-item expanded "><a href="09_dart.html"><strong aria-hidden="true">9.</strong> Dart</a></li><li class="chapter-item expanded "><a href="10_postgres.html"><strong aria-hidden="true">10.</strong> Postgres</a></li><li class="chapter-item expanded "><a href="11_markdown.html"><strong aria-hidden="true">11.</strong> Markdown</a></li><li class="chapter-item expanded "><a href="12_html.html"><strong aria-hidden="true">12.</strong> HTML</a></li><li class="chapter-item expanded "><a href="13_bash.html"><strong aria-hidden="true">13.</strong> Bash</a></li><li class="chapter-item expanded "><a href="14_css.html"><strong aria-hidden="true">14.</strong> CSS</a></li><li class="chapter-item expanded "><a href="15_vue.html"><strong aria-hidden="true">15.</strong> Vue</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded affix "><li class="part-title">Syntax reminder</li><li class="chapter-item expanded "><a href="01_python.html"><strong aria-hidden="true">1.</strong> Python</a></li><li class="chapter-item expanded "><a href="02_typescript.html"><strong aria-hidden="true">2.</strong> Typescript</a></li><li class="chapter-item expanded "><a href="03_rust.html"><strong aria-hidden="true">3.</strong> Rust</a></li><li class="chapter-item expanded "><a href="04_go.html"><strong aria-hidden="true">4.</strong> Go</a></li><li class="chapter-item expanded "><a href="05_java.html"><strong aria-hidden="true">5.</strong> Java</a></li><li class="chapter-item expanded "><a href="06_c.html"><strong aria-hidden="true">6.</strong> C</a></li><li class="chapter-item expanded "><a href="07_cpp.html"><strong aria-hidden="true">7.</strong> C++</a></li><li class="chapter-item expanded "><a href="08_scheme.html"><strong aria-hidden="true">8.</strong> Scheme</a></li><li class="chapter-item expanded "><a href="09_dart.html"><strong aria-hidden="true">9.</strong> Dart</a></li><li class="chapter-item expanded "><a href="10_postgres.html"><strong aria-hidden="true">10.</strong> Postgres</a></li><li class="chapter-item expanded "><a href="11_markdown.html"><strong aria-hidden="true">11.</strong> Markdown</a></li><li class="chapter-item expanded "><a href="12_html.html"><strong aria-hidden="true">12.</strong> HTML</a></li><li class="chapter-item expanded "><a href="13_bash.html"><strong aria-hidden="true">13.</strong> Bash</a></li><li class="chapter-item expanded "><a href="14_css.html"><strong aria-hidden="true">14.</strong> CSS</a></li><li class="chapter-item expanded "><a href="15_vue.html"><strong aria-hidden="true">15.</strong> Vue</a></li><li class="chapter-item expanded "><a href="16_nginx.html"><strong aria-hidden="true">16.</strong> Nginx</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -2203,6 +2203,122 @@ $footer-height: 3.5vh calc(100vh - #{$footer-height})
 })
 </code></pre>
 <pre><code class="language-html">&lt;my-component-name /&gt;
+</code></pre>
+<h1><a class="header" href="#nginx" id="nginx">Nginx</a></h1>
+<ul>
+<li><a href="16_nginx.html#port">Port</a></li>
+<li><a href="16_nginx.html#host">Host</a></li>
+<li><a href="16_nginx.html#static-assets">Static assets</a></li>
+<li><a href="16_nginx.html#redirection">Redirection</a></li>
+<li><a href="16_nginx.html#reverse-proxy">Reverse proxy</a></li>
+<li><a href="16_nginx.html#load-balancing">Load balancing</a></li>
+<li><a href="16_nginx.html#ssl">SSL</a></li>
+</ul>
+<h3><a class="header" href="#port" id="port">Port</a></h3>
+<pre><code class="language-nginx">server {
+    # http (IPv4)
+    listen 80;
+
+    # https (IPv4)
+    listen 443 ssl;
+
+    # http/2
+    listen 443 ssl http2;
+
+    # http (IPv6)
+    listen [::]:80;
+
+    # http (IPv6 only)
+    listen [::]:80 ipv6only=on;
+
+    # https (IPv6)
+    listen [::]:443 ssl http2;
+}
+</code></pre>
+<h3><a class="header" href="#host" id="host">Host</a></h3>
+<pre><code class="language-nginx"># default
+server {
+    listen 443 ssl http2;
+    server_name my-domain.com www.my-domain.com;
+}
+
+server {
+    listen 443 ssl http2;
+    server_name my-domain.net www.my-domain.net;
+}
+
+server {
+    listen 443 ssl http2;
+    server_name my-domain.org www.my-domain.org;
+}
+</code></pre>
+<h3><a class="header" href="#static-assets" id="static-assets">Static assets</a></h3>
+<pre><code class="language-nginx">server {
+    listen 443 ssl http2;
+    server_name my-domain.com www.my-domain.com;
+    root /var/www/my-website;
+    index index.html;
+}
+</code></pre>
+<h3><a class="header" href="#redirection" id="redirection">Redirection</a></h3>
+<pre><code class="language-nginx"># Redirection from my-domain.com to my-other-domain.com
+server {
+    listen 443 ssl http2;
+    server_name my-domain.com www.my-domain.com;
+    return 301 https://my-other-domain.com$request_uri;
+}
+
+# Redirection from http to https
+server {
+    listen 80;
+    server_name my-domain.com www.my-domain.com;
+    return 301 https://$host$request_uri;
+}
+</code></pre>
+<h3><a class="header" href="#reverse-proxy" id="reverse-proxy">Reverse proxy</a></h3>
+<pre><code class="language-nginx">server {
+    listen 443 ssl http2;
+    server_name my-domain.com www.my-domain.com;
+    
+    location / {
+        proxy_pass http://0.0.0.0:3000;
+    }
+}
+</code></pre>
+<h3><a class="header" href="#load-balancing" id="load-balancing">Load balancing</a></h3>
+<pre><code class="language-nginx">upstream my-backend {
+    # default load balancing method: round-robin
+    server backend1.example.com;
+    server backend2.example.com;
+    server backend3.example.com;
+}
+
+server {
+    listen 443 ssl http2;
+    server_name my-domain.com www.my-domain.com;
+    
+    location / {
+        proxy_pass https://my-backend;
+    }
+}
+</code></pre>
+<h3><a class="header" href="#ssl" id="ssl">SSL</a></h3>
+<pre><code class="language-nginx">server {
+    listen 443 ssl http2;
+    server_name my-domain.com www.my-domain.com;
+
+    ssl_certificate /my-path/my-cert.pem;
+    ssl_certificate_key /my-path/my-private-key.pem;
+
+    # OSCP stapling
+    ssl_stapling on;
+    ssl_stapling_verify on;
+
+    # optimizations
+    keepalive 70;
+    ssl_session_cache shared:SSL:10m;
+    ssl_session_timeout 10m;
+}
 </code></pre>
 
                     </main>
