@@ -17,3 +17,4 @@
 - [Bash](./13_bash.md)
 - [CSS](./14_css.md)
 - [Vue](./15_vue.md)
+- [Nginx](./16_nginx.md)
