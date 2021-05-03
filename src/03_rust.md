@@ -10,6 +10,7 @@
 - [Lifetimes](#lifetimes)
 - [Macros](#macros)
 - [Error handling](#error-handling)
+- [Testing](#testing)
 - [Modules](#modules)
 - [Crates](#crates)
 - [Packages](#packages)
@@ -295,6 +296,20 @@ fn read_username_from_file() -> Result<String, io::Error> {
     let mut s = String::new();
     File::open("hello.txt")?.read_to_string(&mut s)?;
     Ok(s)
+}
+```
+
+### Testing
+
+```rust
+// Unit tests
+#[cfg(test)]
+mod tests {
+    #[test]
+    fn my_unit_test() {
+        let my_res = my_add_function(1, 2);
+        assert_eq!(my_res, 3)
+    }
 }
 ```
 
