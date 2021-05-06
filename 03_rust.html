@@ -294,6 +294,12 @@ let user = User {
     username: String::from(&quot;someusername&quot;),
 }
 
+// Store references (see lifetimes)
+struct User {
+    username: &amp;str,
+    email: &amp;str,
+}
+
 // Smart pointer (Heap allocation)
 Box&lt;T&gt; // pointer type for heap allocation
 Rc&lt;T&gt; // single-threaded reference-counting pointer (reference counted)
@@ -425,6 +431,11 @@ fn do_something&lt;T: MyTrait&gt;(x: T) {
 // dynamic dispatch
 fn do_something(x: &amp;MyTrait) { // trait object &amp;MyTrait
     x.my_method();
+}
+
+// Supertrait (a superset of another trait)
+trait MyTrait: MySuperTrait {
+    fn my_method(&amp;self) -&gt; String;
 }
 <span class="boring">}
 </span></code></pre></pre>
