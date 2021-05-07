@@ -115,6 +115,9 @@ enum Color {
 let red = Color::Red;
 
 // Struct (custom data type)
+struct MyStruct; // unit struct
+struct MyStruct(i32, i32); // tuple struct
+
 struct User {
     username: String,
     email: String,
@@ -260,6 +263,10 @@ fn do_something<T: MyTrait>(x: T) {
 fn do_something(x: &MyTrait) { // trait object &MyTrait
     x.my_method();
 }
+
+// trait bounds
+fn my_function<T: MyTraitBound>(t: T) {}
+struct MyStruct<T: MyTraitBound>(T);
 
 // Supertrait (a superset of another trait)
 trait MyTrait: MySuperTrait {
