@@ -46,8 +46,8 @@ on conflict do nothing;
 insert into table_name (id, first_name, last_name)
 values (1, 'Peter', 'Müller'),
        (2, 'Anna', 'Meier')
-on conflict (id) do update set first_name = table_name.first_name,
-                               last_name  = table_name.last_name;
+on conflict (id) do update set first_name = excluded.first_name,
+                               last_name  = excluded.last_name;
 ```
 
 ### Update
