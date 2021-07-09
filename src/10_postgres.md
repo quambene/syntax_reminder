@@ -37,16 +37,33 @@ create type Color as enum ('red', 'green', 'blue');
 insert into table_name (id, first_name)
 values (1, 'Peter'),
        (2, 'Anna');
+
+insert into table_name (id, first_name)
+values (1, 'Peter'),
+       (2, 'Anna')
+on conflict do nothing;
+
+insert into table_name (id, first_name, last_name)
+values (1, 'Peter', 'Müller'),
+       (2, 'Anna', 'Meier')
+on conflict (id) do update set first_name = table_name.first_name,
+                               last_name  = table_name.last_name;
 ```
 
 ### Update
 
 ```sql
+# Update single rows
+update table_name
+set first_name = 'Peter',
+    last_name  = 'Müller'
+where id = 1;
+
 # Update multiple rows
 update table_name t
 set first_name = u.first_name
-from (values (1, 'Pete'),
-             (2, 'Anne')
+from (values (1, 'Peter'),
+             (2, 'Anna')
      ) u(id, first_name)
 where u.id = t.id;
 
