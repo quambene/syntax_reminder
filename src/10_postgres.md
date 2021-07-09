@@ -53,7 +53,7 @@ on conflict (id) do update set first_name = table_name.first_name,
 ### Update
 
 ```sql
-# Update single rows
+# Update single row
 update table_name
 set first_name = 'Peter',
     last_name  = 'Müller'
