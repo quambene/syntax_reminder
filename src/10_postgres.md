@@ -103,3 +103,14 @@ alter table table_name
 alter table table_name
     alter column first_name set not null;
 ```
+
+### Constraints
+
+```sql
+alter table table_name add constraint table_name_column_name_unique unique (column_name);
+alter table table_name drop constraint table_name_column_name_unique;
+
+# Show constraints
+select * from pg_catalog.pg_constraint;
+select * from information_schema.columns where table_name = 'column_name';
+```
