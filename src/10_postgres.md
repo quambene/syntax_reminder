@@ -37,6 +37,7 @@ timetz
 # Comparison operators
 = # equal
 != # not equal
+!= all (array [1, 2]) # not in array
 is null
 is not null
 ```
