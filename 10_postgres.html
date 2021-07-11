@@ -165,6 +165,7 @@
                     <main>
                         <h1><a class="header" href="#postgres" id="postgres">Postgres</a></h1>
 <ul>
+<li><a href="#data-types">Data types</a></li>
 <li><a href="#operators">Operators</a></li>
 <li><a href="#create">Create</a></li>
 <li><a href="#insert">Insert</a></li>
@@ -172,7 +173,26 @@
 <li><a href="#delete">Delete</a></li>
 <li><a href="#read">Read</a></li>
 <li><a href="#alter">Alter</a></li>
+<li><a href="#constraints">Constraints</a></li>
 </ul>
+<h3><a class="header" href="#data-types" id="data-types">Data types</a></h3>
+<pre><code class="language-sql">bool
+char
+smallint, int2
+integer, int, int4
+bigint, int8
+real, float4
+double precision, float8
+varchar
+interval
+int4range, int8range, tsrange, tstzrange, daterange, numrange
+bytea
+timestamptz
+timestamp
+date
+time
+timetz
+</code></pre>
 <h3><a class="header" href="#operators" id="operators">Operators</a></h3>
 <pre><code class="language-sql"># Comparison operators
 = # equal
