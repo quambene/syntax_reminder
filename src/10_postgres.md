@@ -1,5 +1,6 @@
 # Postgres
 
+- [Data types](#data-types)
 - [Operators](#operators)
 - [Create](#create)
 - [Insert](#insert)
@@ -7,7 +8,28 @@
 - [Delete](#delete)
 - [Read](#read)
 - [Alter](#alter)
+- [Constraints](#constraints)
 
+### Data types
+
+```sql
+bool
+char
+smallint, int2
+integer, int, int4
+bigint, int8
+real, float4
+double precision, float8
+varchar
+interval
+int4range, int8range, tsrange, tstzrange, daterange, numrange
+bytea
+timestamptz
+timestamp
+date
+time
+timetz
+```
 
 ### Operators
 
