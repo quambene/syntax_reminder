@@ -16,8 +16,8 @@
 bool
 char
 smallint, int2
-integer, int, int4
-bigint, int8
+integer, int, int4, serial
+bigint, int8, bigserial
 real, float4
 double precision, float8
 varchar
