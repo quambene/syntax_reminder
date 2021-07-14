@@ -1740,6 +1740,7 @@ catch (err) {
 <li><a href="10_postgres.html#read">Read</a></li>
 <li><a href="10_postgres.html#alter">Alter</a></li>
 <li><a href="10_postgres.html#constraints">Constraints</a></li>
+<li><a href="10_postgres.html#performance">Performance</a></li>
 </ul>
 <h3><a class="header" href="#data-types-9" id="data-types-9">Data types</a></h3>
 <pre><code class="language-sql">bool
@@ -1820,6 +1821,23 @@ where id = 1;
 </code></pre>
 <h3><a class="header" href="#read" id="read">Read</a></h3>
 <pre><code class="language-sql">select * from table_name;
+
+# subquery
+select * from (select id, name from table_name) sub;
+
+# case
+select case when table1.name is null then table2.name else table1.col1 end as name
+from table1
+full outer join table2 on table1.id = table2.id;
+
+# joins
+inner join
+left outer join, left join
+right outer join, right join
+full outer join
+cross join
+natural join
+
 </code></pre>
 <h3><a class="header" href="#alter" id="alter">Alter</a></h3>
 <pre><code class="language-sql">alter table table_name
@@ -1841,6 +1859,10 @@ alter table table_name drop constraint table_name_column_name_unique;
 # Show constraints
 select * from pg_catalog.pg_constraint;
 select * from information_schema.columns where table_name = 'column_name';
+</code></pre>
+<h3><a class="header" href="#performance" id="performance">Performance</a></h3>
+<pre><code class="language-sql">explain select * from table_name;
+explain (analyse true, buffers true) [query]
 </code></pre>
 <h1><a class="header" href="#markdown" id="markdown">Markdown</a></h1>
 <h3><a class="header" href="#contents" id="contents">Contents</a></h3>
