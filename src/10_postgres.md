@@ -9,6 +9,7 @@
 - [Read](#read)
 - [Alter](#alter)
 - [Constraints](#constraints)
+- [Performance](#performance)
 
 ### Data types
 
@@ -109,6 +110,23 @@ where id = 1;
 
 ```sql
 select * from table_name;
+
+# subquery
+select * from (select id, name from table_name) sub;
+
+# case
+select case when table1.name is null then table2.name else table1.col1 end as name
+from table1
+full outer join table2 on table1.id = table2.id;
+
+# joins
+inner join
+left outer join, left join
+right outer join, right join
+full outer join
+cross join
+natural join
+
 ```
 
 ### Alter
@@ -136,4 +154,11 @@ alter table table_name drop constraint table_name_column_name_unique;
 # Show constraints
 select * from pg_catalog.pg_constraint;
 select * from information_schema.columns where table_name = 'column_name';
+```
+
+### Performance
+
+```sql
+explain select * from table_name;
+explain (analyse true, buffers true) [query]
 ```
